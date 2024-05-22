@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Joshua Rollins</title>
+        <link rel="stylesheet" type="text/css" href="Css/portfolio.css">
+    </head>
+    
+    <!--BODY-->
+    <body Class="Background">
+
+        <!--NAVBAR-->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+
+        <!--BREAKS INSERTED TO ADD SPACE BETWEEN NAVBAR AND THE FIRST HEADING-->
+        <br>
+        <br>
+
+        <!--BACKGROUND VIDEO-->
+        <div id="Home">
+            <video autoplay muted loop id="WebDive_Video">
+                <source src="Image\webDive.mp4" type="video/mp4">
+                <!--ALT MESSAGE FOR VIDEO-->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!--VIDEO TEXT-->
+        <div class="Video_Text"> 
+            <h1 class="white-text">Joshua Rollins's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>You might not think that programmers are artists, but programming 
+                        <br>is an extremely creative profession. It's logic-based creativity.
+                    </q>
+                    <br>-John Romero
+                    <br><q>There is always one more bug to fix.</q>&nbsp;&nbsp;<q>Talk is cheap. Show me the code.</q>
+                    <br>-Ellen Ullman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Linus Torvalds
+                    <br>
+                    <br> My name is Josh. Welcome to my portfolio website. With it I will give you a peek into my background
+                    and experience.
+                    <br>
+                    <br>Feel Free to poke around and get to know me, and
+                    <BR>Thank you for stopping by and enjoy! 
+                </p>
+            </strong>
+        </div>
+
+        <!--ABOUT SECTION-->
+        <div class="ROW" id="About">
+            <!--LEFT COLUMN-->
+            <div class="Column_2">
+                <img src="Image\Computers.webp" alt="Computer Image">
+            </div>
+            <!--RIGHT COLUMN-->
+            <div class="Column_1">
+                <p>
+                    I am a software developer who's creativity knows no bounds when it comes to code! I love being a father of 2 grown men, I'm so proud of them. I'm also a Grandfather of 3 boys.
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Game Developer Boot Camp, and trained and exerienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and many more.
+                    <br>
+                    <br>I am a Full-stack developer with a passion for creating and would love to work with you on your project. <a href="Contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+
+        <!--GITHUB SECTION-->
+        <div class="Row" id="GitHub">
+            <!--LEFT COLUMN-->
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/Dev-OtedGamer" target="_blank">MY GitHub</a></p>
+                </p>
+            </div>
+            <!--RIGHT COLUMN-->
+            <div class="Column_2">
+                <a href="https://github.com/Dev-OtedGamer" taget="_blank"><img src="Image\codingpic.webp" alt="CodingPicture"></a>
+            </div>
+        </div>
+
+        <!--CONTACT SECTION-->
+        <div class="Row" id="Contact">
+            <!--CONTACT IMAGE, LEFT COLUMN-->
+            <div class="Column_2 Column_tall">
+                <img src="Image\mailBox.webp" alt="Contact_Image">
+            </div>
+            <!--CONTACT FORM, RIGHT COLUMN-->
+            <div class="Column_1 Column_tall">
+                <h1>Contact</h1>
+                <!--This specifies where and how to send the form data; we are leaving it blank-->
+                <form action="" method="POST"><!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                <label>Name:</label>
+                    <input type="text" placeholder="Please enter your name here">
+                <label>Email:</label>
+                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                <label>Message:</label>
+                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                    <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+        <!--FOOTER SECTION-->
+        <footer>
+            <p>
+                <p class="center">&copy DRCC.Group , <a href="https://www.linkedin.com/in/joshua-rollins-3298102aa/" target="_blank">My Linkedin</a></p>
+                <br>
+            </p>
+        </footer>
+    </body>
+</html>
