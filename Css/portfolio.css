@@ -217,8 +217,7 @@ footer {
     padding: 10px;
     padding-top: 3%; 
     height: 400px; 
-    background-color: #f2f2f2;
-    margin-bottom: 2px; 
+    background-color: #f2f2f2; 
 }
 
 /* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
