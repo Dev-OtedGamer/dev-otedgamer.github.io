@@ -14,14 +14,13 @@
         <!--NAVBAR-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--New section added-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!--Onclick and ondblclick functions added to open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
-
-        <!--BREAKS INSERTED TO ADD SPACE BETWEEN NAVBAR AND THE FIRST HEADING-->
-        <br>
-        <br>
 
         <!--BACKGROUND VIDEO-->
         <div id="Home">
@@ -53,6 +52,59 @@
             </strong>
         </div>
 
+        <!--Slideshow section added-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/Square personal photo.png" alt="Picture of yourself">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--Slide 2 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--Slide 3 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!--Slide 4 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/C_Sharp_and_Dot_Net.png" alt="C# logo">
+                        <div class="text">C#, .Net Framework, ASP.NET, MVC,</div>
+                    </div>
+                     <!--Slide 5 of 6-->
+                     <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/SQL_and_Database.jpg" alt="SQL logo">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                     <!--Slide 6 of 6-->
+                     <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/Square Custom Picture.png" alt="Replace with a picture of your choosing">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--Previous and next buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br><!--Adds a space between the slideshow images and the dots-->
+
+                <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
+
+                <div style="text-align: center;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--ABOUT SECTION-->
         <div class="ROW" id="About">
             <!--LEFT COLUMN-->
@@ -61,6 +113,7 @@
             </div>
             <!--RIGHT COLUMN-->
             <div class="Column_1">
+                <h1>About</h1>
                 <p>
                     I am learning to be a software developer who's creativity knows no bounds when it comes to the digital Realm! I love being a father of 2 grown men, I'm so proud of them. I'm also a Grandfather of 3 boys.
                     <br>
@@ -89,23 +142,24 @@
         </div>
 
         <!--CONTACT SECTION-->
-        <div class="Row" id="Contact">
-            <!--CONTACT IMAGE, LEFT COLUMN-->
-            <div class="Column_2 Column_tall">
-                <img src="Image\mailBox.webp" alt="Contact_Image">
-            </div>
-            <!--CONTACT FORM, RIGHT COLUMN-->
-            <div class="Column_1 Column_tall">
+        <div id="Contact">
+          <button onclick="openForm()" class="Pop_up_Button">CONTACT</button>
+          <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mgegbvlp"
+            method="POST" class="form-container"
+            ><!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+          
                 <h1>Contact</h1>
                 <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"><!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                <label>Name:</label>
+                
+                <label for="name"><b>Name:</b></label>
                     <input type="text" placeholder="Please enter your name here">
-                <label>Email:</label>
+                <label for="phone"><b>Email:</b></label>
                     <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                <label>Message:</label>
+                <label for="message"><b>Message:</b></label>
                     <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                    <input type="submit" value="SUBMIT">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
