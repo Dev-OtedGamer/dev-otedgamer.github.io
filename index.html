@@ -58,7 +58,7 @@
                 <div id="Slideshow_Container">
                     <!--Slide 1 of 6-->
                     <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/Square personal photo.png" alt="Picture of yourself">
+                        <img class="Slideshow_Images" src="Image/MeBlackWhite.jpg" alt="Picture of Me">
                         <div class="text">I'm available to assist you on your project!</div>
                     </div>
                     <!--Slide 2 of 6-->
@@ -83,7 +83,7 @@
                     </div>
                      <!--Slide 6 of 6-->
                      <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/Square Custom Picture.png" alt="Replace with a picture of your choosing">
+                        <img class="Slideshow_Images" src="Image/Code.jpg" alt="Code Blocks">
                         <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
                     </div>
                     <!--Previous and next buttons-->
@@ -143,19 +143,22 @@
 
         <!--CONTACT SECTION-->
         <div id="Contact">
-          <button onclick="openForm()" class="Pop_up_Button">CONTACT</button>
+          <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
           <div class="form-popup" id="myForm">
             <form action="https://formspree.io/f/mgegbvlp"
             method="POST" class="form-container"
-            ><!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+            ><!-- Here we are using a free online service from
+https://formspree.io/ to send our contact form to an email address of our choosing - 
+note: it will not run unless live on the internet, you have to push it to your online 
+website first -->
           
                 <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                
                 <label for="name"><b>Name:</b></label>
-                    <input type="text" placeholder="Please enter your name here">
-                <label for="phone"><b>Email:</b></label>
-                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                    <input type="text" placeholder="Please enter your name here" name="name" required>
+                <label for="phone"><b>Phone:</b></label>
+                    <input type="text" placeholder="Feel free to leave a phone number" name="phone">
+                <label for="email"><b>Email:</b></label>
+                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here" required>
                 <label for="message"><b>Message:</b></label>
                     <input type="text" id="Message" name="Message" placeholder="Please write your message here">
                     <button type="submit" class="btn">SUBMIT</button>
@@ -171,5 +174,6 @@
                 <br>
             </p>
         </footer>
+        <script src="JS/portfolio.js"></script>
     </body>
 </html>
