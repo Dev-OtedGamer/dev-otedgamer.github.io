@@ -383,7 +383,7 @@ footer {
     float: left;
     width: 50%; /*This ensures the column takes up half of the page width*/ 
     padding: 1.6%;  
-    height: 700px; /*This sets the height of the column to 400px - this may need to be
+    height: 800px; /*This sets the height of the column to 400px - this may need to be
     adjusted depending on the text entered*/ 
     background-color: #f2f2f2; /*Sets the background color of the left columns*/
 }
@@ -399,7 +399,7 @@ footer {
     float: left;
     width: 50%;
     padding: 1.6%;
-    height: 700px;
+    height: 800px;
     background-color: #4d4d4d;
 }
 
