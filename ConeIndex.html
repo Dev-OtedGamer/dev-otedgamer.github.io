@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cone_Survivor_Unreal</title>
+    <link rel="stylesheet" href="Css/Conestylesheet.css">
+</head>
+
+<body style="text-align: center; font-family: Arial, sans-serif;">
+
+    <header>
+        <h1>Cone Survivor Game Design and Development</h1>
+        <p style="font-size: 36px; color: rgb(255, 255, 255);">
+            <strong>This is a two-week project I worked on for Prosper I.T Consulting.</strong>
+        </p>
+    </header>
+
+    <img src="Image/ConeStart.PNG" alt="Dig Dug Gameplay Demo" width="600" />
+
+    <section style="max-width: 800px; margin: auto; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6;">
+        <p>
+            On this project, I was given full creative control to design and develop any game I wanted using Unreal Engine 5, 
+            strictly using Blueprints and no C++. I chose to create a <strong>round-based survival first-person shooter</strong> 
+            inspired by classic arcade and modern wave shooters.
+        </p>
+        <p>
+            Using the cone shape as a pun for the title, I built much of the game’s aesthetic and character design around it — 
+            including cone-shaped enemies and weapons. I focused heavily on game features and systems, implementing modular controls 
+            to tweak gameplay variables during runtime, which allowed for smooth player stat upgrades and dynamic balancing.
+        </p>
+        <p>To enhance progression, I added:</p>
+        <ul>
+            <li>A <strong>vendor system</strong> for purchasing upgrades like fire rate, movement speed, and new weapons</li>
+            <li>A <strong>currency drop system</strong> from enemies</li>
+            <li>Multiple player <strong>boost mechanics</strong> tied to gameplay milestones</li>
+        </ul>
+        <p>
+            When I encountered a bug where enemies could pass through walls and floors, I took a creative approach instead of patching it out —
+            I leaned into it and turned the enemies into <strong>ghosts</strong>, giving the game a unique twist and a nod to arcade nostalgia.
+        </p>
+        <p>
+            Sure, zombies are cool — but they’ve been overdone. I wanted something fresher... and a little more spectral. 
+            (Shout-out to <strong>One Slice Pizza Man</strong>, if you know, you know.)
+        </p>
+    </section>
+
+    <img src="Image/ConePlayerBP.PNG" alt="Dig Dug Start Screen Demo" width="600" />
+    <img src="Image/ConeEnemyBP.PNG" alt="Dig Dug Start Screen Demo" width="600" />
+    <img src="Image/ConeVendorList.PNG" alt="Dig Dug Start Screen Demo" width="600" />
+
+    <section>
+        <p style="max-width: 800px; margin: auto;">
+            I created modular spawner systems for both enemies and health pickups. These spawners can be placed anywhere in the level, and their behavior is fully 
+            customizable through the Details panel in the hierarchy — allowing you to set the item type and spawn intervals.
+            Below is a short video showcasing some gameplay and these features in action.
+        </p>
+    </section>
+
+    <video width="640" height="360" controls>
+        <source src="Image/ConeSurvivorGameplay2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <section>
+        <p style="max-width: 800px; margin: auto;">
+            Here's additional gameplay footage demonstrating how the rifle, while less accurate than the pistol, delivers greater impact — 
+            especially when fire rate upgrades aren't applied. You’ll also see the body armor system in action, showcasing its defensive benefits during combat.
+        </p>
+    </section>
+
+    <img src="Image/ConeRifleGamePlay.gif" alt="Cone Rifle Gif" width="600" />
+    <img src="Image/ConeArmorGamePlay.gif" alt="Cone Armor Gif" width="600" />
+
+    <section>
+        <p style="max-width: 800px; margin: auto;">
+            The Game Over screen is fully implemented as well, providing a clean and functional end to each run.
+        </p>
+    </section>
+
+    <img src="Image/ConeGameOver.PNG" alt="Cone Rifle Gif" width="600" />
+    
+
+
+    <footer style="margin-top: 30px;">
+        <nav>
+            <a href="index.html">Portfolio</a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
