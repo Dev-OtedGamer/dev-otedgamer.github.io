@@ -1,49 +1,104 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-	<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartment Basic Tour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 40px;
+        }
 
-		<title> </title>
-		<meta charset="utf-8">
+        header, main, footer {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
 
-	</head>
-	
-	<center><body>
-	<h1>Basic Tour:<h1>
-	<font size="5" color="black"><p>Location: 3rd Floor Unit# 300<p>
-	<p><P>
-	<P><p>
-	<p>
-	<p><p>
-	</font>
-		
-		<header>
-			<main>
-				<div><img src="../Images/Kitchen.JPG">
-				<p>Kitchen<p><div>
-				<div><img src="../Images/A-C.JPG">
-				<p>A/C</p>
-				<p>and</p>
-				<p>Bathroom</p></div>
-				<img src="../Images/Bath.JPG">
-				<div>
-				<div><img src="../Images/int_south.JPG">
-				<img src="../Images/int_north.JPG">
-				<p>Overview<p>
-				<img src="../Images/int_East.JPG">
-				<img src="../Images/int_west.JPG"><div>
-			</main>
-		</header>
-	
-	</body>
-	
-	<footer>
-		<nav>
-			<a href="../Apartment_Test_Main.html">HOME</a> |
-			<a href="About_Page.html">ABOUT</a> |
-			<a href="FAQs_Page.html">FAQs</a> |
-			<a href="Contact_Page.html">CONTACT</a>
-		</nav>
-	</Footer></center>
+        h1 {
+            font-size: 2em;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Basic Apartment Tour</h1>
+        <p class="description">Location: 3rd Floor Unit #300</p>
+    </header>
+
+    <main>
+        <div class="section">
+            <img src="../Images/Kitchen.JPG" alt="Kitchen area">
+            <p>Kitchen</p>
+        </div>
+
+        <div class="section">
+            <img src="../Images/A-C.JPG" alt="Air conditioning and bathroom hallway">
+            <p>A/C</p>
+        </div>
+
+        <div class="section">
+            <img src="../Images/Bath.JPG" alt="Bathroom">
+            <p>Bathroom</p>
+        </div>
+
+        <div class="section">
+            <img src="../Images/int_south.JPG" alt="Interior view facing south">
+            <img src="../Images/int_north.JPG" alt="Interior view facing north">
+            <p>Overview - North and South Views</p>
+        </div>
+
+        <div class="section">
+            <img src="../Images/int_East.JPG" alt="Interior view facing east">
+            <img src="../Images/int_west.JPG" alt="Interior view facing west">
+            <p>Overview - East and West Views</p>
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="../Apartment_Test_Main.html">Home</a> |
+            <a href="About_Page.html">About</a> |
+            <a href="FAQs_Page.html">FAQs</a> |
+            <a href="Contact_Page.html">Contact</a>
+        </nav>
+    </footer>
+</body>
 
 </html>
