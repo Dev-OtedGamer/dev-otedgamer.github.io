@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevator Portfolio</title>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="ElevatorStyles.css" />
+</head>
+<body>
+
+  <!-- Elevator Wrapper -->
+  <div class="elevator-wrapper">
+
+    <!-- Elevator Interior -->
+    <div class="elevator">
+
+      <!-- Elevator Doors -->
+      <div class="door left-door"></div>
+      <div class="door right-door"></div>
+
+      <!-- Elevator Walls -->
+      <div class="left-wall">
+        <div class="left-poster" id="leftPoster"></div>
+        <div class="floor-buttons left-buttons">
+          <!-- Floor buttons dynamically injected via JavaScript -->
+        </div>
+      </div>
+
+      <div class="right-wall">
+        <div class="right-poster">
+          <img src="Image/MEBlackWhite.jpg" alt="Josh Rollins" />
+          <p>Owner / Operator<br>Josh Rollins</p>
+        </div>
+        <div class="floor-buttons right-buttons">
+          <!-- Floor buttons dynamically injected via JavaScript -->
+        </div>
+      </div>
+
+    </div> <!-- End Elevator -->
+
+    <!-- Floor 3: About Me -->
+    <div class="floor-content" id="floor-3">
+      <div class="floor3-wrapper">
+        <!-- Left Poster for Floor 3 -->
+        <div class="floor3-poster-left">
+          25+ years in building, maintaining, repairing,<br />
+          troubleshooting, debugging complex systems.<br />
+          <br />
+          3+ years in learning and training in multiple languages and disciplines
+          including HTML, CSS, JavaScript, Python, C#, C++, SQL.<br />
+          <br />
+          Never afraid to tackle new and unknown projects knowing I have the knowlege and ability to self teach when needed.
+        </div>
+
+        <!-- Main Floor 3 Content -->
+        <div class="floor3-main">
+          <h1>Welcome to my newly remodeled portfolio!</h1>
+          <p>
+           We decided to install an elevator-because there's a lot of ground to cover in these brief few minutes while you get to know me. And don't worry-this is now a fully one-page experience, powered by JavaScript to dynamically show each section. See? I <em>did</em> learn a few things on my journey of knowledge.
+          </p>
+          <p>
+            In 2022, I decided to pursue my lifelong dream of making video games. I began by learning Python through free courses, then started exploring Unity and C#. By 2024, I committed fully by enrolling in The Tech Academy's Game Developer Boot Camp. My goal was to master Unity and Unreal and start creating indie games.
+          </p>
+          <p>
+            But I gained so much more.
+          </p>
+          <p>
+            I learned frontend and backend development-web design, UI/UX, databases and storage, computer science fundamentals, .NET development with C#, and even app development. I've always been a creative person, but I struggled to find the right outlet. Through tech, I've discovered multiple ways to express myself-whether through web design, game design, app creation, and beyond.
+          </p>
+          <p>
+            Now that I've completed my training, I'm ready to start creating. And while working with a team is more fun, I'll go solo if I have to-until I find the right place to contribute, grow, and thrive.
+          </p>
+          <button class="back-button">Back to Elevator</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floor 2: Projects -->
+    <div id="floor-2" class="floor-content">
+      <h1>My Projects Gallery</h1>
+
+    <!-- Moving Rows -->
+    <div class="project-row row-1">
+      <!-- Example Card -->
+      <div class="project-card" data-project="1">
+        <img src="image/DigDugStartAnimation.gif" alt="Project 1">
+        <h3>Project Title 1</h3>
+      </div>
+      <div class="project-card" data-project="2">
+        <img src="image/DigDugGameOver.gif" alt="Project 2">
+        <h3>Project Title 2</h3>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+
+    <div class="project-row row-2">
+      <div class="project-card" data-project="3">
+        <img src="image/ConePlayerBP.PNG" alt="Project 3">
+        <h3>Project Title 3</h3>
+      </div>
+      <div class="project-card" data-project="4">
+        <img src="image/ConeStart.PNG" alt="Project 4">
+        <h3>Project Title 4</h3>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <img id="modalImage" src="" alt="Project Screenshot">
+        <p id="modalDescription">Project description will appear here...</p>
+      </div>
+    </div>
+
+    <!-- Back to Elevator -->
+    <button class="back-button">Back to Elevator</button>
+    </div>
+    <div id="gunAimer">
+      <img src="image/handGun2D.png" alt="NES Gun" />
+    </div>
+
+
+    <!-- Floor 1: Contact -->
+    <div class="floor-content" id="floor-1">
+  <div class="contact-image-wrapper">
+    <img src="image/contact_scene_background.jpg" alt="Retro Desk Scene" class="contact-background" />
+  </div>
+
+  <div class="contact-overlay">
+    <h1>Contact Me</h1>
+    <p>Email: josh@example.com</p>
+    <p><a href="https://www.linkedin.com/in/joshrollins" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/JoshRollins" target="_blank">GitHub</a></p>
+    <button class="back-button">Back to Elevator</button>
+  </div>
+</div>
+  </div> <!-- End Elevator Wrapper -->
+
+  <!-- JavaScript Logic -->
+  <script src="ElevatorScript.js"></script>
+</body>
+</html>

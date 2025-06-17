@@ -1,0 +1,482 @@
+/* =======================================
+   RESET & BASE STYLES
+======================================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* =======================================
+   ELEVATOR WRAPPER & INTERIOR
+======================================= */
+.elevator-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #222; /* Dark outer wrapper */
+}
+
+.elevator {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333; /* Inner elevator space */
+  z-index: 1;
+}
+
+/* =======================================
+   ELEVATOR DOORS
+======================================= */
+.door {
+  position: absolute;
+  width: 25vw;
+  height: 100vh;
+  background: #555;
+  top: 0;
+  transition: transform 1s ease;
+  z-index: 2;
+}
+
+.left-door {
+  left: 25vw; /* Positioned after left wall */
+  border-right: 2px solid #333;
+}
+
+.right-door {
+  right: 25vw; /* Positioned before right wall */
+  border-left: 2px solid #333;
+}
+
+.open-left {
+  transform: translateX(-25vw); /* Slide left door out */
+}
+
+.open-right {
+  transform: translateX(25vw); /* Slide right door out */
+}
+
+/* =======================================
+   SIDE WALLS (Left & Right Panels)
+======================================= */
+.left-wall, .right-wall {
+  position: absolute;
+  width: 25vw;
+  height: 100vh;
+  top: 0;
+  background: #222;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align floor buttons to bottom */
+  padding: 1rem;
+}
+
+.left-wall {
+  left: 0;
+}
+
+.right-wall {
+  right: 0;
+}
+
+/* Utility Class */
+.hidden {
+  display: none !important;
+}
+
+/* =======================================
+   POSTERS (Centered on Side Walls)
+======================================= */
+.left-poster, .right-poster {
+  position: absolute;
+  top: 10%;
+  bottom: 50%; /* Vertically centered between 10% and 50% */
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+  background: #444;
+  border: 2px solid #666;
+  color: #f0f0f0;
+}
+
+.right-poster img {
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+/* =======================================
+   FLOOR SELECTION BUTTONS
+======================================= */
+.floor-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0); /* Centered horizontally at 50% height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 4;
+}
+
+.floor-buttons button {
+  margin: 6px 0;
+  padding: 10px;
+  width: 60px;
+  background: #888;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.floor-buttons button:hover {
+  background: #aaa;
+}
+
+/* =======================================
+   FLOOR CONTENT AREA
+======================================= */
+.floor-content {
+ display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: inherit;
+}
+
+.floor-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* =======================================
+   FLOOR 3 CUSTOM STYLES
+======================================= */
+.floor3-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 40px 20px 120px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.floor3-poster-left {
+  flex: 0 0 15%;
+  background-color: #f0f0f0;
+  border-left: 5px solid #333;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.floor3-main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+#floor-3 {
+  background: #ffffff;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-left: 8px solid #4CAF50;
+  border-right: 8px solid #4CAF50;
+  padding: 2rem;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+#floor-3 h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+#floor-3 p {
+  margin-bottom: 1rem;
+}
+
+/* =======================================
+   FLOOR 2 CUSTOM STYLES
+======================================= */
+.crosshair-active {
+  cursor: url('image/crosshair.png') 16 16, crosshair;
+}
+
+#floor-2 {
+  display: none; /* Controlled by JS */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* full screen height */
+  background-color: #f8f0ff;
+  z-index: 10; /* Ensure it's above elevator walls but below modals */
+  overflow-y: auto; /* Allow scrolling if content grows */
+  padding: 2rem;
+}
+
+.project-row {
+  display: flex;
+  gap: 2rem;
+  overflow: visible;
+  padding: 1rem;
+  position: relative;
+}
+
+.row-1 {
+  animation: slideRightLeft 6s infinite alternate ease-in-out;
+}
+
+.row-2 {
+  animation: slideLeftRight 6s infinite alternate ease-in-out;
+}
+
+@keyframes slideRightLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+@keyframes slideLeftRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-20px); }
+}
+
+
+.project-card {
+  border: 2px solid #ccc;
+  background: white;
+  padding: 1rem;
+  width: 200px;
+  height: auto;
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Hidden state */
+.modal.hidden {
+  display: none;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  width: 95%;
+  max-width: 450px;
+  max-height: 90vh;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  color: #111;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+}
+
+/* Modal Image */
+.modal-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.shooting-gallery-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 14vh; /* Increased for visibility */
+  padding-top: 1vh;
+  padding-bottom: 2vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 20;
+  overflow: hidden;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.6); /* subtle shadow above banner */
+}
+
+#gunAimer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 120px;
+  height: auto;
+  z-index: 20;
+  transition: transform 0.1s ease;
+  pointer-events: none;
+  display: none; /* hidden by default */
+}
+
+#floor-2.active #gunAimer {
+  display: block;
+}
+
+#gunAimer img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .project-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none; /* Disable animation on mobile */
+  }
+
+  .project-card {
+    width: 80vw;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 90vw;
+    max-height: 80vh;
+    padding: 1rem;
+  }
+
+  .back-button {
+    position: relative;
+    bottom: auto;
+    margin-top: 2rem;
+  }
+}
+
+/* =======================================
+   FLOOR 1 CUSTOM STYLES
+======================================= */
+/* Floor 1 Contact Layout */
+#floor-1 {
+  position: absolute;         /* Required for layering */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;              /* Full viewport */
+  overflow: hidden;           /* Prevent spillover */
+  z-index: 1000;              /* Above elevator background */
+  background-color: #f4f4f4;  /* Optional fallback */
+}
+
+.contact-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;           /* Clip large image edges */
+  z-index: 1;
+}
+
+img.contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.contact-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;                /* Above background */
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional styling */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+/* =======================================
+   BACK TO ELEVATOR BUTTON
+======================================= */
+.back-button {
+  position: sticky;
+  bottom: 20px;
+  display: block;
+  margin: 40px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: #666;
+}
+
+/* =======================================
+   SHAKE ANIMATION
+======================================= */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0); }
+  20%, 60% { transform: translate(-1px, 0); }
+  40%, 80% { transform: translate(1px, 0); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
