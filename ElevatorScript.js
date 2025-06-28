@@ -10,11 +10,46 @@ const leftDoor = document.querySelector('.left-door');
 const rightDoor = document.querySelector('.right-door');
 const elevator = document.querySelector('.elevator');
 const contents = document.querySelectorAll('.floor-content');
+const gun = document.getElementById('gunWrapper');
+
+
 const leftQuotes = [
   " Thinking outside the box and finding ways to open my own doors into the Tech Industry",
   "When one door closes, it is only a matter of time before another one opens",
   "Continually elevating my learning and knowledge"
 ];
+
+
+// ================================
+// Project card setup
+// ================================
+function setupProjectCards() {
+  const cards = document.querySelectorAll('.project-card');
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImage = document.getElementById('modalImage');
+  const modalDesc = document.getElementById('modalDescription');
+  const closeBtn = document.querySelector('.close-button');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const projectKey = `project${card.dataset.project}`;
+      const data = projectData[projectKey];
+
+      if (data) {
+        modalTitle.textContent = data.title;
+        modalImage.src = data.image;
+        modalDesc.textContent = data.description;
+        modal.classList.remove('hidden');
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+}
+
 
 // ================================
 // DOM Content Loaded Event
@@ -22,20 +57,11 @@ const leftQuotes = [
 window.addEventListener('DOMContentLoaded', () => {
   resetPosters();
   setupElevatorControls();
+  setupProjectCards();
+
 });
 
-const gun = document.getElementById('gunAimer');
 
-window.addEventListener('mousemove', (e) => {
-  const winWidth = window.innerWidth;
-  const percent = (e.clientX / winWidth - 0.5) * 2; // -1 to 1
-  const maxTilt = 15; // degrees
-  const rotate = maxTilt * percent;
-
-  if (gun && document.getElementById('floor-2').style.display === 'block') {
-    gun.style.transform = `translateX(-50%) rotate(${rotate}deg)`;
-  }
-});
 
 // ================================
 // Card & Modal Management
@@ -45,50 +71,65 @@ const projectData = {
   project1: {
     title: "Project Title 1",
     description: "This project was built with HTML, CSS, and JavaScript.",
-    image: "image/DigDugStartAnimation.gif"
+    image: "Image/DigDugStartAnimation.gif"
   },
   project2: {
     title: "Project Title 2",
     description: "Unity 2D coin collector game with jump animation and score tracking.",
-    image: "image/DigDugGameOver.gif"
+    image: "Image/DigDugGameOver.gif"
   },
   project3: {
     title: "Project Title 3",
     description: "Blueprint setup for cone character in Unreal Engine.",
-    image: "image/ConePlayerBP.PNG"
+    image: "Image/ConePlayerBP.PNG"
   },
   project4: {
     title: "Project Title 4",
     description: "Main screen layout for Unreal cone game.",
-    image: "image/ConeStart.PNG"
+    image: "Image/ConeStart.PNG"
   }
 };
 
-const cards = document.querySelectorAll('.project-card');
-const modal = document.getElementById('projectModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalImage = document.getElementById('modalImage');
-const modalDesc = document.getElementById('modalDescription');
-const closeBtn = document.querySelector('.close-button');
 
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const projectKey = `project${card.dataset.project}`;
-    const data = projectData[projectKey];
+// ================================
+// Shooting Gallery Logic - Clean
+// ================================
+const gunWrapper = document.getElementById('gunWrapper');
+const gunArm = document.getElementById('gunArm');
+const floor2 = document.getElementById('floor-2');
 
-    if (data) {
-      modalTitle.textContent = data.title;
-      modalImage.src = data.image;
-      modalDesc.textContent = data.description;
-      modal.classList.remove('hidden');
-    }
-  });
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.add('hidden');
-});
+function updateGunPosition() {
+  const isVisible = !floor2.classList.contains('hidden');
 
+  if (isVisible) {
+    gunWrapper.style.display = 'block';
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const offsetX = mouseX - centerX;
+    const offsetY = mouseY - centerY;
+
+    const translateX = offsetX * 0.02;
+    const rotateX = offsetY * 0.05;
+
+    gunArm.style.transform = `translateX(${translateX}px) rotate(${rotateX}deg)`;
+  } else {
+    gunWrapper.style.display = 'none';
+  }
+
+  requestAnimationFrame(updateGunPosition);
+}
+
+requestAnimationFrame(updateGunPosition);
 // ================================
 // Poster & Wall Management
 // ================================
@@ -186,25 +227,29 @@ function closeDoors() {
 // ================================
 // Floor Content Display
 // ================================
+
 function showContent(floorNumber) {
-  // Hide all floor content
-  contents.forEach(content => content.style.display = "none");
-
-  // Show selected floor content
+  contents.forEach(content => content.classList.add('hidden')); // Hide all
   const selectedContent = document.getElementById(`floor-${floorNumber}`);
-  if (selectedContent) {
-    selectedContent.style.display = "block";
+  console.log('selectedContent:', selectedContent); // Add this line
+  console.log('Trying to unhide:', selectedContent);
+  console.log('Floor to show:', floorNumber);
 
-    // Crosshair only for Floor 2
-    if (floorNumber == 2) {
+
+
+  if (selectedContent) {
+    selectedContent.classList.remove('hidden'); // Show selected
+    const isFloor2Active = (floorNumber == 2);
+    gunWrapper.style.display = isFloor2Active ? 'block' : 'none';
+
+    if (isFloor2Active) {
       document.body.classList.add('crosshair-active');
-      gun.style.display = "block";
     } else {
       document.body.classList.remove('crosshair-active');
-      gun.style.display = "none";
     }
   }
 }
+
 
 // ================================
 // Back Button - Return to Elevator
@@ -212,11 +257,12 @@ function showContent(floorNumber) {
 document.querySelectorAll('.back-button').forEach(button => {
   button.addEventListener('click', () => {
     closeDoors();
-    gun.style.display = 'none';
+    gunWrapper.style.display = 'none';
     document.body.classList.remove('crosshair-active');
 
     // Hide floor content
-    contents.forEach(content => content.style.display = 'none');
+    contents.forEach(content => content.classList.add('hidden'));
+
 
     // Show elevator walls
     leftWall.classList.remove('hidden');
