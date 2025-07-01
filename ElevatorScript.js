@@ -33,16 +33,26 @@ function setupProjectCards() {
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      const projectKey = `project${card.dataset.project}`;
-      const data = projectData[projectKey];
+  const projectKey = `project${card.dataset.project}`;
+  const data = projectData[projectKey];
 
-      if (data) {
-        modalTitle.textContent = data.title;
-        modalImage.src = data.image;
-        modalDesc.textContent = data.description;
-        modal.classList.remove('hidden');
-      }
-    });
+  if (data) {
+    // Trigger spin animation
+    card.classList.remove('card-spin');
+    void card.offsetWidth; // Force reflow
+    card.classList.add('card-spin');
+
+    // Delay modal until spin completes
+    setTimeout(() => {
+      modalTitle.textContent = data.title;
+      modalImage.src = data.image;
+      modalDesc.textContent = data.description;
+      modal.classList.remove('hidden');
+    }, 600); // Match spin duration (0.6s)
+  }
+});
+
+
   });
 
   closeBtn.addEventListener('click', () => {
@@ -87,6 +97,21 @@ const projectData = {
     title: "Project Title 4",
     description: "Main screen layout for Unreal cone game.",
     image: "Image/ConeStart.PNG"
+  },
+  project5: {
+    title: "Project Title 5",
+    description: "Main screen layout for Unreal cone game.",
+    image: "Image/ConeStart.PNG"
+  },
+  project6: {
+    title: "Project Title 6",
+    description: "Main screen layout for Unreal cone game.",
+    image: "Image/ConeStart.PNG"
+  },
+  project7: {
+    title: "Project Title 7",
+    description: "Main screen layout for Unreal cone game.",
+    image: "Image/ConeStart.PNG"
   }
 };
 
@@ -113,15 +138,16 @@ function updateGunPosition() {
     gunWrapper.style.display = 'block';
 
     const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-
     const offsetX = mouseX - centerX;
-    const offsetY = mouseY - centerY;
 
-    const translateX = offsetX * 0.02;
-    const rotateX = offsetY * 0.05;
+    // Clamp horizontal movement
+    const maxOffsetX = window.innerWidth * 0.25; // 25% of viewport width
+    const clampedOffsetX = Math.max(-maxOffsetX, Math.min(offsetX, maxOffsetX));
 
-    gunArm.style.transform = `translateX(${translateX}px) rotate(${rotateX}deg)`;
+    const translateX = clampedOffsetX * 0.02; // Sway
+    const rotateZ = clampedOffsetX * 0.03;    // Tilt
+
+    gunArm.style.transform = `translateX(${translateX}px) rotate(${rotateZ}deg)`;
   } else {
     gunWrapper.style.display = 'none';
   }
@@ -129,7 +155,68 @@ function updateGunPosition() {
   requestAnimationFrame(updateGunPosition);
 }
 
+
+
 requestAnimationFrame(updateGunPosition);
+
+// ================================
+// GUN PROJECTILE
+// ================================
+  function fireProjectile(x, y) {
+  const projectile = document.createElement('div');
+  projectile.classList.add('projectile');
+
+  const gunRect = gunArm.getBoundingClientRect();
+  const startX = gunRect.left + gunRect.width / 2;
+  const startY = gunRect.top;
+
+  projectile.style.left = `${startX}px`;
+  projectile.style.top = `${startY}px`;
+
+  document.body.appendChild(projectile);
+
+  const deltaX = x - startX;
+  const deltaY = y - startY;
+  const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+
+  const angle = Math.atan2(deltaY, deltaX);
+  const moveX = Math.cos(angle) * distance;
+  const moveY = Math.sin(angle) * distance;
+
+  requestAnimationFrame(() => {
+    projectile.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+
+  // Detect hit after animation
+  setTimeout(() => {
+    const hitElement = document.elementFromPoint(x, y);
+    if (hitElement?.classList.contains('project-card')) {
+      hitElement.classList.remove('card-spin');
+      void hitElement.offsetWidth; // Force reflow
+      hitElement.classList.add('card-spin');
+    }
+    projectile.remove();
+  }, 400);
+}
+
+
+
+// ================================
+// GUN EVENT LISTENER
+// ================================
+  document.addEventListener('click', (e) => {
+  const isFloor2Active = !floor2.classList.contains('hidden');
+  if (!isFloor2Active) return; //  Only fires on Floor 2
+
+  gunArm.classList.remove('recoil');
+  void gunArm.offsetWidth;
+  gunArm.classList.add('recoil');
+
+  fireProjectile(e.clientX, e.clientY);
+});
+
+
+
 // ================================
 // Poster & Wall Management
 // ================================

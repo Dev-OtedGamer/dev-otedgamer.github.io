@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Door Blender Model Package</title>
+  <link rel="stylesheet" href="Css/DoorsBlenderstylesheet.css" />
+</head>
+<body>
+  <header>
+    <h1>Blender 3D Door Models</h1>
+    <p class="intro">
+      <strong>This was a personal project inspired by the work I was doing professionally at the time.</strong>
+    </p>
+  </header>
+
+  <section class="content">
+    <p>
+      I noticed it was becoming difficult to distinguish between doorways, windows, and hallway openings—they all started to look like boxes with holes. So I took it upon myself to find a better way to create distinct, modular doors. I <strong>created</strong> a clever door modifier using Geometry Nodes and interchangeable parts.
+    </p>
+
+    <div class="slideshow-container" id="slideshow-Nodes">
+      <img src="Images/Doors_Blender_GeoNodes.JPG" class="slide active" alt="Geo Nodes" />
+      <img src="Images/Doors_Blender_PanicBarsGeoNodes.JPG" class="slide" alt="Panic Bars" />
+      <img src="Images/Doors_Blender_SelfCloserGeoNodes.JPG" class="slide" alt="Self Closer" />
+    </div>
+
+    <p>
+      These assets worked well with the scaled model I built. Here’s a procedural window modifier I created as well:
+    </p>
+
+    <div class="slideshow-container" id="slideshow-Windows">
+      <img src="Images/Window_Blender_ProceduralNodes.JPG" class="slide active" alt="Window 1" />
+      <img src="Images/Window_Blender_ProceduralNodes2.JPG" class="slide" alt="Window 2" />
+    </div>
+
+    <p>
+      These shots demonstrate my attention to detail and the versatility of this package. By connecting and disconnecting nodes, I can switch hardware and parts to construct infinite door variations. Some modifications can even be made directly from the toolbar menu for easier editing.
+    </p>
+
+    <div class="slideshow-container" id="slideshow-detail">
+      <img src="Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG" class="slide active" alt="Thumb Handle Detail" />
+      <img src="Images/Doors_Blender_SelfCloserDetail.JPG" class="slide" alt="Self Closer Detail" />
+      <img src="Images/Doors_Blender_PushBarDoorModifer.JPG" class="slide" alt="Push Bar Modifier" />
+    </div>
+
+    <p>
+      These are just a few of the doors that can be constructed using this package:
+    </p>
+
+    <div class="slideshow-container" id="slideshow-Doors">
+      <img src="Images/Doors_Blender_NoHandleDoor.JPG" class="slide active" alt="No Handle Door" />
+      <img src="Images/Doors_Blender_PushBarDoor.JPG" class="slide" alt="Push Bar Door" />
+      <img src="Images/Doors_Blender_PushPullDoor.JPG" class="slide" alt="Push/Pull Door" />
+      <img src="Images/Doors_Blender_CrashbarWindowDoor.JPG" class="slide" alt="Crash Bar Door" />
+      <img src="Images/Doors_Blender_ThumbHandleLrgWindowDoor.JPG" class="slide" alt="Thumb Handle Large Window Door" />
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </footer>
+
+  <script>
+    function startSlideshow(containerId, interval = 3000) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('.slide');
+      let index = 0;
+
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, interval);
+    }
+
+    // Start all slideshows
+    startSlideshow('slideshow-Nodes');
+    startSlideshow('slideshow-Windows');
+    startSlideshow('slideshow-detail');
+    startSlideshow('slideshow-Doors');
+  </script>
+</body>
+</html>

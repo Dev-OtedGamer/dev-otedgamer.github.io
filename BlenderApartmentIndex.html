@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apartment Blender Model</title>
+  <link rel="stylesheet" href="Css/BlenderAptstylesheet.css" />
+</head>
+<body>
+  <header>
+    <h1>Blender 3D Model</h1>
+    <p class="intro">
+      <strong>This 3D model was created as a proof of concept to secure a larger project during my time at Microchip Technology while working for Securitas USA.</strong>
+    </p>
+  </header>
+
+  <section class="content">
+    <p>
+      My supervisor mentioned interest in a 3D map of the facility for security purposes. At the time, I had just begun learning Blender 3.6—with no prior experience—but I’ve always been quick to pick up new tools. I offered to create the map, but before I could begin, I was asked to prove I could lead a project of that scale and earn client approval.
+      <strong>So in just four days</strong>, I built this model of the apartment I was living in at the time.
+    </p>
+
+    <div class="slideshow-container" id="slideshow-top">
+  <img src="Images/apartment-top-view.JPG" class="slide active" alt="Top View 1" />
+  <img src="Images/Aprt_Blend_Topview.JPG" class="slide" alt="Top View 2" />
+  <img src="Images/Aprt_Blend_Topview_Angle.JPG" class="slide" alt="Top View 3" />
+</div>
+
+    <p>
+      The model was built to scale using Blender’s grid snapping and unit settings. This allowed for precise layout and realistic proportions.
+    </p>
+
+    <div class="slideshow-container" id="slideshow-main">
+        <img src="Images/Aprt_Blend_Kitchen.JPG" class="slide active" alt="Kitchen" />
+        <img src="Images/Aprt_Blend_Livingroom.JPG" class="slide" alt="Living Room" />
+        <img src="Images/Aprt_Blend_Bedroom.JPG" class="slide" alt="Bedroom" />
+    </div>
+
+    <p>
+      These shots demonstrate the level of detail and the potential for interactivity in the final product.
+    </p>
+
+    <div class="slideshow-container" id="slideshow-bathroom">
+        <img src="Images/Aprt_Blend_Bathroom.JPG" class="slide active" alt="Bathroom" />
+        <img src="Images/Aprt_Blend_Bathroom_Closed_Cabinet.JPG" class="slide" alt="Cabinet Closed" />
+        <img src="Images/Aprt_Blend_Bathroom_Open_Cabinet.JPG" class="slide" alt="Cabinet Open" />
+    </div>
+
+    <p>
+      After presenting this model, the client approved the full project, allowing me to use Blender professionally for three months and gain valuable real-world experience.
+    </p>
+
+    
+      <img src="Images/Aprt_Blend_TopAngleDoor.JPG" alt="Top Angle with Door" class="feature-image" />
+  </section>
+
+  <footer>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </footer>
+
+  <script>
+  function startSlideshow(containerId, interval = 3000) {
+    const container = document.getElementById(containerId);
+    const slides = container.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, interval);
+  }
+
+  // Start slideshows
+  startSlideshow('slideshow-top');
+  startSlideshow('slideshow-main');
+  startSlideshow('slideshow-bathroom');
+</script>
+
+</body>
+</html>
