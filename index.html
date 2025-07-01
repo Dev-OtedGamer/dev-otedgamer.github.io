@@ -1,128 +1,216 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 2d Heroes</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+<html>
+    <!--HEAD-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Joshua Rollins</title>
+        <link rel="stylesheet" type="text/css" href="Css/portfolio.css">
+    </head>
+    
+    <!--BODY-->
+    <body Class="Background">
+
+        <!--NAVBAR-->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <!--New section added-->
+            <a href="#Slideshow">Slideshow</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <!--Onclick and ondblclick functions added to open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
+
+    <!--BACKGROUND VIDEO-->
+        <div id="Home">
+            <video autoplay muted loop id="WebDive_Video">
+                <source src="Image\webDive.mp4" type="video/mp4">
+                <!--ALT MESSAGE FOR VIDEO-->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+      <!--VIDEO TEXT-->
+        <div class="Video_Text"> 
+            <h1 class="white-text">Joshua Rollins's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>You might not think that programmers are artists, but programming 
+                        <br>is an extremely creative profession. It's logic-based creativity.
+                    </q>
+                    <br>-John Romero
+                    <br><q>There is always one more bug to fix.</q>&nbsp;&nbsp;<q>Talk is cheap. Show me the code.</q>
+                    <br>-Ellen Ullman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Linus Torvalds
+                    <br>
+                    <br> My name is Josh. Welcome to my portfolio website. With it I will give you a peek into my background
+                    and experience.
+                    <br>
+                    <br>Feel Free to poke around and get to know me, and
+                    <BR>Thank you for stopping by and enjoy! 
+                </p>
+            </strong>
+        </div>
+
+      <!--Slideshow section added-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/MEBlackWhite.jpg" alt="Picture of Me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!--Slide 2 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!--Slide 3 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!--Slide 4 of 6-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                        <div class="text">C#, .Net Framework, ASP.NET, MVC,</div>
+                    </div>
+                     <!--Slide 5 of 6-->
+                     <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/SQL_and_Database.jpg" alt="SQL logo">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                     <!--Slide 6 of 6-->
+                     <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="Image/Code.jpg" alt="Code Blocks">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!--Previous and next buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br><!--Adds a space between the slideshow images and the dots-->
+
+        <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
+
+        <div style="text-align: center;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+
+        <!--ABOUT SECTION-->
+        <div class="ROW" id="About">
+            <!--LEFT COLUMN-->
+            <div class="Column_2">
+                <img src="Image\Computers.webp" alt="Computer Image">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub profile here:
+                    <br>
+                <p class="center"><a href="https://github.com/Dev-OtedGamer" target="_blank">MY GitHub Profile</a></p>
+                    <br>
+                    Games available on my GitHub:<br>
+                    <a href="https://github.com/Dev-OtedGamer/The-Tech-Academy-Unity-Projects" target="_blank">Coins Gone Wild</a> - Created using Unity Game Engine and C#<br>
+                    <a href="https://github.com/Dev-OtedGamer/UnrealGameSubmission" target="_blank">Coin Collector</a> - Created using Unreal Game Engine and C++
+                </p>
+                <br>
+                <h1><a href="https://www.linkedin.com/in/rollinsjoshworks/" target="_blank">MY LinkedIn Profile</a></h1>
+                <br>
+                <h1><a href="https://docs.google.com/document/d/1E_Lm-Lp9xpFN04wBdxeeHbSnPST2VUwUo1zMWbRjKC8/edit?usp=sharing" target="_blank">MY Resume</a></h1>
+
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">2d Heroes</div>
-      </div>
-    </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
+            <!--RIGHT COLUMN-->
+            <div class="Column_1">
+                <h1>About Me</h1>
+                <p>
+                    I'm a passionate and driven game developer and aspiring full-stack software developer whose creativity knows no bounds in the digital realm. I’m also a proud father of two amazing sons and a grandfather to three energetic boys—they are my inspiration and motivation every day.
+                    <br><br>
+                    I recently completed <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s intensive Game Developer Boot Camp, where I trained in a wide range of modern programming and web development languages including HTML, CSS, JavaScript, SQL, C#, Python, and C++. Through hands-on experience and real-world projects, I gained a solid foundation in both front-end and back-end technologies.
+                    <br><br>
+                    My journey through game development has been exciting and deeply fulfilling. In Unity, I learned how to bring ideas to life by working with scenes, characters, game objects, scripts, animations, lighting, and particle effects. I created multiple games using Unity—most notably, <strong>Coins Gone Wild</strong>, a fun and energetic platformer where players hop around collecting coins, and a <strong>mini solar system simulation</strong> that demonstrates object motion and rotation. Both are available on my <a href="https://github.com/Dev-OtedGamer?tab=repositories" target="_blank">GitHub</a>.
+                    <br><br>
+                    I also completed a C++ and Unreal Engine course, where I built a game called <strong>Coin Collector</strong>, which features randomly generated coins and glowing obstacle boxes within a grid. This project taught me a great deal about procedural generation, memory management, and the power of Unreal Engine's C++ backend. And this is just the beginning—my head is full of new game ideas I’m eager to build.
+                    <br><br>
+                    As I approach the completion of my full-stack training, I’m excited about the future. I love building things—from intuitive web applications to immersive game worlds—and I’m eager to bring that passion to a professional team. Whether it's games, tools, or software systems, I'm ready to contribute, collaborate, and continue growing.
+                    <br><br>
+                    Let’s build something amazing together. Feel free to reach out here <a href="mailto:Rollinsjoshworks@gmail.com">Email</a> or through the link below.
+                </p>
+            </div>
+        </div>
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
+        <!--GITHUB SECTION-->
+        <div class="Row" id="GitHub">
+            <!--LEFT COLUMN-->
+            <div class="Column_1">
+                
+                <!--Project Section -->
+                <h1>Projects:</h1>
+                <p>
+                    <strong>Client: Prosper I.T Consulting/2 week</strong> <a href= "https://dev-otedgamer.github.io/DigDug" target="_blank">project</a><br>
+                     - DiG DUG Recreation Unity/C#<br>  
+                    <br>
+                    <strong>Client: Prosper I.T Consulting/2 week</strong> <a href= "https://dev-otedgamer.github.io/ConeIndex" target="_blank">project</a><br>
+                     - Cone Survivor Game Design & Development Unreal Engine 5/Blueprints<br>
+                    <br>
+                    <strong>Client: Lifeworks NW/2 day</strong> <a href= "https://dev-otedgamer.github.io/Flower" target="_blank">project</a><br>
+                     - Short animation created using Unity animation tools<br>
+                    <br>
+                    <strong>Client: Microchip Technology & Securitas - 3-month</strong> <a href= "https://dev-otedgamer.github.io/Apartment_Test_Main.html" target="_blank">project</a><br>
+                    The 3D model shown was created in Blender within just four days as a proof of capability and does not reflect the final product. 
+                    This early demo helped secure project approval and demonstrated my ability to handle full 3D asset production for access control systems.<br>
+                    <br>
+                    <strong>Client: Microchip Technology & Securitas - 2-week</strong> <a href= "https://dev-otedgamer.github.io/Apartment_Test_Main.html" target="_blank">project</a><br>
+                    Using the 3D model from the previous project, I built a web-based interactive demo using HTML and photos of the 3D assets to explore access control
+                     interface possibilities. This was a proof of concept and not a final product, but it helped communicate design direction and technical viability.
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Dev-OtedGamer.github.io.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/Dev-OtedGamer.github.io.data.br",
-        frameworkUrl: buildUrl + "/Dev-OtedGamer.github.io.framework.js.br",
-        codeUrl: buildUrl + "/Dev-OtedGamer.github.io.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "2d Heroes",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
+                    </p>
+            </div>
+            <!--RIGHT COLUMN-->
+            <div class="Column_2">
+                <a href="https://github.com/Dev-OtedGamer" taget="_blank"><img src="Image\codingpic.webp" alt="CodingPicture"></a>
+            </div>
+        </div>
+        
+        <!--CONTACT SECTION-->
+        <div id="Contact">
+          <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+          <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mgegbvlp"
+            method="POST" class="form-container"
+            ><!-- Here we are using a free online service from
+https://formspree.io/ to send our contact form to an email address of our choosing - 
+note: it will not run unless live on the internet, you have to push it to your online 
+website first -->
+          
+                <h1>Contact</h1>
+                <label for="name"><b>Name:</b></label>
+                    <input type="text" placeholder="Please enter your name here" name="name" required>
+                <label for="phone"><b>Phone:</b></label>
+                    <input type="text" placeholder="Feel free to leave a phone number" name="phone">
+                <label for="email"><b>Email:</b></label>
+                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here" required>
+                <label for="message"><b>Message:</b></label>
+                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
+        </div>
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+        <!--FOOTER SECTION-->
+        <footer>
+            <p>
+                <p class="center"><a href="https://www.linkedin.com/in/joshua-rollins-3298102aa/" target="_blank">My Linkedin</a></p>
+                <br>
+            </p>
+        </footer>
+        <script src="JS/portfolio.js"></script>
+    </body>
 </html>
