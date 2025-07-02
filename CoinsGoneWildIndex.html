@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coins-Gone-Wild - Unity Game Project</title>
+  <link rel="stylesheet" href="Css/CoinsGoneWildstylesheet.css" />
+</head>
+<body>
+  <header>
+    <h1>Coins-Gone-Wild - A Unity Game Project</h1>
+    <p class="intro">
+      <strong>Created in Unity 6000.0.31f1</strong><br>
+      Final assignment for the Unity course at The Tech Academy in Portland, OR.
+    </p>
+  </header>
+
+  <main>
+    <section class="overview">
+      <h2>Project Overview</h2>
+      <p>
+        This was a timed assignment to create a quick Unity game with a win condition. I spent too much time on ideas that were unattainable given the time limit. At the last minute, I pivoted to a coin collector game (thank you, Hedgehog, for the Hail Mary).
+      </p>
+    </section>
+
+    <section class="start">
+      <h2>Game Start Screen</h2>
+      <img src="Image/CoinsGoneWildStart.png" alt="Start Screen" />
+    </section>
+
+    <section class="features">
+      <h2>Player Script</h2>
+      <p>This image showcases the C# code used for the player.</p>
+      <div class="slideshow-container" id="slideshow-code">
+        <img src="Image/CoinsGoneWildPlayerSnip.png" class="slide" alt="Player Code" />
+      </div>
+    </section>
+
+    <section class="level-gameplay">
+      <h2>Level Design</h2>
+      <p>
+        I initially planned corridors and halls, but after adding jumping, I shifted to an island-hopping concept with water death traps. I tried making the cube roll or hop like a bunny, but it behaved unpredictably. I locked it to the ground and allowed jumping only from lower ground. I kept it simple due to time constraints.
+      </p>
+      <div class="slideshow-container" id="slideshow-levels">
+        <img src="Image/CoinsGoneWildGamePlay.png" class="slide" alt="Gameplay" />
+        <img src="Image/CoinsGoneWildJumping.png" class="slide" alt="Jumping" />
+      </div>
+    </section>
+
+    <section class="win-condition">
+      <h2>Win Condition</h2>
+      <p>
+        Here's a snippet of the C# code for coin collection and the win condition. I was focused on submitting on time, so I didn’t create a win screen or loss condition. The win is logged in the console, and the game returns to the start screen upon winning.
+      </p>
+      <div class="slideshow-container" id="slideshow-win">
+        <img src="Image/CoinsGoneWildCoinSnip.png" class="slide" alt="Coin Code" />
+        <img src="Image/CoinsGoneWildConsoleLog.png" class="slide" alt="Console Log" />
+      </div>
+    </section>
+
+   <section class="story">
+  <h2>Game Story</h2>
+  <p>
+    Unfortunately, there’s no story—just a coin collector. But I did learn that even a simple game requires thoughtful planning. Sometimes, even when you plan for something, it doesn’t work out and has to be cut for the project to move forward and meet the deadline. Always strive to under-promise and over-deliver—but above all, always deliver what you promise.
+  </p>
+</section>
+
+
+    <section class="game-link">
+      <h2>Coins-Gone-Wild Demo</h2>
+      <p>
+        <a href="https://dev-otedgamer.github.io/WebGLBuildCoinsGoneWild/index.html" target="_blank">▶ PLAY DEMO</a><br>
+        <strong>Controls:</strong> Arrows / WASD = Move &nbsp; | &nbsp; Space = Jump
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </footer>
+
+  <script>
+    function startSlideshow(containerId, interval = 3000) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('.slide');
+      let index = 0;
+
+      slides[index].classList.add('active');
+
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, interval);
+    }
+
+    startSlideshow('slideshow-code');
+    startSlideshow('slideshow-levels');
+    startSlideshow('slideshow-win');
+  </script>
+</body>
+</html>
