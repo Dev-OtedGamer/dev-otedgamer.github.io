@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2D Heroes – Unity Game Project</title>
+  <link rel="stylesheet" href="Css/2DHeroesstylesheet.css" />
+</head>
+<body>
+  <header>
+    <h1>2D Heroes – A Unity Game Project</h1>
+    <p class="intro">
+      <strong>Created in Unity 2021.3.45f1</strong><br>
+      This project was a major milestone in my Unity learning journey.
+    </p>
+  </header>
+
+  <main>
+    <section class="overview">
+      <h2>Project Overview</h2>
+      <p>
+        I developed this game while following a Unity tutorial, but I took it further by using my own tile sets, animations, and level designs. It was a hands-on way to learn about sprites, animation, pickups, level progression, and environmental storytelling.
+      </p>
+    </section>
+
+    <section class="slideshow-section">
+      <h2>Game Start & Editor View</h2>
+      <div class="slideshow-container" id="slideshow-start">
+        <img src="Image/2DHeroesStart.png" class="slide active" alt="Game Start Screen" />
+        <img src="Image/2dHeroesStartEditor.png" class="slide" alt="Unity Editor View" />
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Gameplay Features</h2>
+      <p>
+        These images showcase heart and diamond pickups, bombs, enemies, and hammer animations.
+      </p>
+      <div class="slideshow-container" id="slideshow-features">
+        <img src="Image/2DHeroesHeartDiamond.png" class="slide active" alt="Heart and Diamond Pickups" />
+        <img src="Image/2DHeroesLitBomb.png" class="slide" alt="Lit Bomb" />
+        <img src="Image/2DHeroesPigBomb.png" class="slide" alt="Pig Bomb" />
+        <img src="Image/2DHeroesHammer.png" class="slide" alt="Hammer Animation" />
+      </div>
+    </section>
+
+    <section class="level-design">
+      <h2>Level Design & Progression</h2>
+      <p>
+        I designed hidden paths and treasure areas to encourage exploration. In level two, I introduced difficulty progression using gravity and false perspective to create platforming challenges. The camera zooms dynamically, making timing and movement more intense. Even I struggle to beat it twice in a row!
+      </p>
+      <div class="slideshow-container" id="slideshow-levels">
+        <img src="Image/2DHeroesLvl1.png" class="slide active" alt="Level 1" />
+        <img src="Image/2DHeroesLvl2.png" class="slide" alt="Level 2" />
+        <img src="Image/2DHeroesFalsePlatforms.png" class="slide" alt="False Platforms" />
+        <img src="Image/2DHeroesDropDown.png" class="slide" alt="Drop Down Challenge" />
+      </div>
+    </section>
+
+    <section class="code-snippet">
+      <h2>Code Snippet</h2>
+      <p>
+        Here's a snippet from my player script using <code>[SerializeField]</code> to expose variables in the Unity editor for easier tweaking during development.
+      </p>
+      <img src="Image/2DHeroesPlayerSnip.png" class="code-image" alt="Player Script Snippet" />
+    </section>
+
+    <section class="story">
+      <h2>Game Story</h2>
+      <p>
+        You've been taken hostage in the Pig Lair. Armed with your trusty hammer, you must battle your way out while reclaiming stolen treasure. How much can you recover before your escape?
+      </p>
+    </section>
+
+    <section class="GameLink">
+      <h2>2D Heroes Demo:</h2>
+      <p>
+        <h2><a href="https://dev-otedgamer.github.io/WebGLBuild2DHeros/index.html">PLAY DEMO</a></h2>
+        <br>
+        <strong>Game Controls:</strong> Left Ctrl/Left mouse = Attack  --  Space = Jump  --  Arrows/AWSD = Move
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </footer>
+
+  <script>
+    function startSlideshow(containerId, interval = 3000) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('.slide');
+      let index = 0;
+
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, interval);
+    }
+
+    startSlideshow('slideshow-start');
+    startSlideshow('slideshow-features');
+    startSlideshow('slideshow-levels');
+  </script>
+</body>
+</html>
