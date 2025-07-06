@@ -85,37 +85,63 @@
       <!-- Moving Rows -->
       <div class="project-row row-1">
         <!-- Example Card -->
+        <div class="project-card" data-project="0">
+          <div class="image-container">
+          <img src="Images/Aprt_Blend_Topview_Angle.JPG" alt="Project 0">
+          </div>
+          <h3>Blender 3D Model</h3>
+        </div>
         <div class="project-card" data-project="1">
-          <img src="Image/DigDugStartAnimation.gif" alt="Project 1">
-          <h3>Project Title 1</h3>
+          <div class="image-container">
+          <img src="Images/Doors_Blender_ThumbHandleLrgWindowDoor.JPG" alt="Project 1">
+          </div>
+          <h3>Blender 3D Door Package</h3>
         </div>
         <div class="project-card" data-project="2">
-          <img src="Image/DigDugGameOver.gif" alt="Project 2">
-          <h3>Project Title 2</h3>
+          <div class="image-container">
+          <img src="Images/Apartment_Layout.PNG" alt="Project 2">
+          </div>
+          <h3>Interactive Map Project</h3>
         </div>
         <div class="project-card" data-project="3">
-          <img src="Image/DigDugGameOver.gif" alt="Project 3">
-          <h3>Project Title 3</h3>
+          <div class="image-container">
+          <img src="Image/SurvivalTreeChopped.png" alt="Project 3">
+          </div>
+          <h3>Survival Test</h3>
         </div>
-        <!-- Add more cards here -->
+        <div class="project-card" data-project="4">
+          <div class="image-container">
+          <img src="Image/2DheroesStart.png" alt="Project 4">
+          </div>
+          <h3>2D Heroes</h3>
+        </div>
+        <!-- Add more cards here --> 
       </div>
 
       <div class="project-row row-2">
-        <div class="project-card" data-project="4">
-          <img src="Image/ConeStart.PNG" alt="Project 4">
-          <h3>Project Title 4</h3>
-        </div>
         <div class="project-card" data-project="5">
-          <img src="Image/ConePlayerBP.PNG" alt="Project 5">
-          <h3>Project Title 5</h3>
+          <div class="image-container">
+          <img src="Image/Flower_Happy1.png" alt="Project 5">
+          </div>
+          <h3>Happy Flower Project</h3>
         </div>
         <div class="project-card" data-project="6">
-          <img src="Image/ConePlayerBP.PNG" alt="Project 6">
-          <h3>Project Title 6</h3>
+          <div class="image-container">
+          <img src="Image/CoinsGoneWildGamePlay.png" alt="Project 6">
+          </div>
+          <h3>Coins-Gone-Wild</h3>
         </div>
         <div class="project-card" data-project="7">
-          <img src="Image/ConePlayerBP.PNG" alt="Project 7">
-          <h3>Project Title 7</h3>
+          <div class="image-container">
+          <img src="Image/DigDugStartAnimation.gif" alt="Project 7">
+          </div>
+          <h3>DiG DUG Remake</h3>
+        </div>
+        <div class="project-card" data-project="8">
+          <div class="image-container">
+          <img src="Image/ConeStart.PNG" alt="Project 8">
+          </div>
+          <h3>Cone Survivor</h3>
         </div>
         <!-- Add more cards here -->
       </div>
@@ -124,13 +150,23 @@
 
     <!-- Project Modal -->
     <div id="projectModal" class="modal hidden">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2 id="modalTitle">Project Title</h2>
-        <img id="modalImage" src="" alt="Project Screenshot">
-        <p id="modalDescription">Project description will appear here...</p>
-      </div>
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+
+    <div class="image-wrapper">
+      <button class="nav-button left" id="prevSlide">←</button>
+      <img id="modalImage" src="" alt="Project Image" />
+      <button class="nav-button right" id="nextSlide">→</button>
     </div>
+
+    <div class="text-area">
+      <h2 id="modalTitle">Project Title</h2>
+      <p id="modalDescription">Project description...</p>
+      <a id="modalLink" href="#" target="_blank">View More</a>
+    </div>
+  </div>
+</div>
+
 
     <!-- Back to Elevator -->
     <button class="back-button">Back to Elevator</button>

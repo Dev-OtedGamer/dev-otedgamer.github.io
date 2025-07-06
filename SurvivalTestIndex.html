@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coins-Gone-Wild - Unity Game Project</title>
+  <link rel="stylesheet" href="Css/SurvivalTeststylesheet.css" />
+</head>
+<body>
+  <header>
+    <h1>Survival Test - A Unity Game Project</h1>
+    <p class="intro">
+      <strong>Created in Unity 2021.3.45f1</strong><br>
+      A Personal Project / Self Teaching Survival Game Building
+    </p>
+  </header>
+
+  <main>
+    <section class="overview">
+      <h2>Project Overview</h2>
+      <p>
+        This project was my attempt to teach myself the basics of survival crafting games-especially gathering, which is essential for crafting and building. Ironically, that mirrors my own journey: gathering knowledge and skills so I can one day build immersive, creative games. I have so many stories I want to tell, and I hope I find the time to tell them all.
+        <br><br>I started with free assets from the Unity Asset Store. First, I found an environment scene with trees. Then I sourced an axe, logs, and planks from three different packages and tied them together into a small demo. I created a player camera, built an inventory system and toolbar, and implemented logic for chopping down and regrowing trees. The trees drop logs, which the player can pick up and convert into planks.
+        <br><br><h2><strong>In my best Wizard of Oz impression: "Pay no attention to the inventory slots in the middle of the screen!"</strong></h2>
+
+      </p>
+    </section>
+
+    <section class="inventory">
+      <h2>Inventory Logic</h2>
+      <div class="slideshow-container" id="slideshow-inventory">
+        <img src="Image/SurvivalEquipLogicSnip.png" class="slide" alt="Axe Snip" />
+        <img src="Image/SurvivalSlot1.png" class="slide" alt="Slot 1" />
+        <img src="Image/SurvivalAxeUnequip.png" class="slide" alt="Axe unequip" />
+        <img src="Image/SurvivalSlot3.png" class="slide" alt="Slot 3" />
+        <img src="Image/SurvivalEquipLogicSnip.png" class="slide" alt="Jumping" />
+        <img src="Image/SurvivalToolBarLogicSnip.png" class="slide" alt="Tree" />
+      </div>
+    </section>
+
+    <section class="trees">
+      <h2>Tree Logic</h2>
+      <p>These Images show how the tree logic works.</p>
+      <div class="slideshow-container" id="slideshow-trees">
+        <img src="Image/SurvivalAxeLogicsnip.png" class="slide" alt="Axe Logic Snip" />
+        <img src="Image/SurvivalFreshTree.png" class="slide" alt="Tree" />
+        <img src="Image/SurvivalTreeChopping.png" class="slide" alt="Tree Chopping" />
+        <img src="Image/SurvivalTreeChopped.png" class="slide" alt="Tree Chopped" />
+        <img src="Image/SurvivalTreeRegrow.png" class="slide" alt="Tree" />
+        <img src="Image/SurvivalTreeRegrowSnip.png" class="slide" alt="Tree" />
+      </div>
+    </section>
+
+    <section class="logs">
+      <h2>Logs-Transport-Planks</h2>
+      <p>
+        Here we see the Logs and the player transport and drop them, and chopping them into planks.
+      </p>
+      <div class="slideshow-container" id="slideshow-logs">
+        <img src="Image/SurvivalLogTransport.png" class="slide" alt="Transport" />
+        <img src="Image/SurvivalDroppingLogs.png" class="slide" alt="Drop" />
+        <img src="Image/SurvivalChopLog.png" class="slide" alt="Planks" />
+        <img src="Image/SurvivalScripts.png" class="slide" alt="Transport" />
+      </div>
+    </section>
+
+
+    <section class="game-link">
+      <h2>Survival Test Demo</h2>
+      <p>
+        <a href="https://dev-otedgamer.github.io/WebGLBuildSurvivalTest/index.html" target="_blank">▶ PLAY DEMO</a><br>
+        <strong>Controls:</strong> Arrows / WASD = Move &nbsp; | &nbsp; Space = Jump &nbsp; | &nbsp; Left Mouse = Swing Axe &nbsp; | &nbsp; G = Drop Log &nbsp; | &nbsp; 1-6 = Tool Bar Slots <br><strong>Esc = Mouse Pointer for Exit.</strong>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </footer>
+
+  <script>
+  function startSlideshow(containerId, interval = 3000) {
+    const container = document.getElementById(containerId);
+    const slides = container.querySelectorAll('.slide');
+    let index = 0;
+
+    slides[index].classList.add('active');
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, interval);
+  }
+
+  startSlideshow('slideshow-inventory');
+  startSlideshow('slideshow-trees');
+  startSlideshow('slideshow-logs');
+</script>
+</body>
+</html>
