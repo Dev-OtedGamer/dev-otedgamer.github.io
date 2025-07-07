@@ -436,6 +436,23 @@ body, html {
   gap: 0.5rem;
   text-align: center;
 }
+.play-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.controls-description {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
 
 
 .nav-button.left {
@@ -548,28 +565,39 @@ body, html {
 }
 
 .contact-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;           /* Clip large image edges */
-  z-index: 1;
-}
-
-img.contact-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
-  max-height: 100vh;
-  object-fit: cover;
+  height: 100%;
+  background-image: url('Image/contact_scene_background.jpg');
+  background-size: cover;         /* Ensures full coverage */
+  background-position: center;    /* Keeps it centered */
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
+
 .contact-overlay {
   position: absolute;
-  bottom: 10%;
+  bottom: 51%;
   left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: left;
+  color: #222; /* Dark marker color */
+  padding: 1.5rem 2rem;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+
+.contact-overlay2 {
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
   transform: translateX(-50%);
   z-index: 2;                /* Above background */
   text-align: center;
@@ -578,6 +606,21 @@ img.contact-background {
   padding: 1rem 2rem;
   border-radius: 8px;
 }
+
+.contact-overlay3 {
+  position: absolute;
+  bottom: 10%;
+  left: 72%;
+  transform: translateX(-50%);
+  z-index: 2;                /* Above background */
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional styling */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+
 
 /* =======================================
    BACK TO ELEVATOR BUTTON

@@ -139,238 +139,278 @@ const slideshows = [
   [
     {
       image: 'Images/Aprt_Blend_Topview_Angle.JPG',
-      title: 'Top View 3D model Apartment',
-      description: 'This is a Model I used to secure a large project at work',
+      title: '3D Apartment Model – Top View',
+      description: 'This top-down render showcases the full layout of a 3D apartment model I created. It played a key role in securing a major project at work by demonstrating spatial planning and design clarity.',
       link: 'https://dev-otedgamer.github.io/BlenderApartmentIndex.html'
     },
     {
       image: 'Images/Aprt_Blend_Bathroom_Open_Cabinet.JPG',
-      title: 'Detailed View of Bathroom Cabinet',
-      description: 'This Images shows how the model can be Interactive',
+      title: 'Interactive Bathroom Cabinet Detail',
+      description: 'This image highlights the interactive elements of the model, such as functional cabinet doors. It demonstrates how Blender can be used to simulate real-world usability in architectural visualization.',
       link: 'https://dev-otedgamer.github.io/BlenderApartmentIndex.html'
     },
     {
       image: 'Images/Aprt_Blend_Livingroom.JPG',
-      title: 'Detailed View of Frontroom Window',
-      description: 'This Image along with the Bathroom image display the amount of detail that can be put into the model',
+      title: 'Living Room Window – Detail View',
+      description: 'This detailed render of the living room window emphasizes the level of realism and precision achievable in Blender. It complements the bathroom view to showcase the model’s overall fidelity.',
       link: 'https://dev-otedgamer.github.io/BlenderApartmentIndex.html'
     },
     {
       image: 'Images/Aprt_Blend_TopAngleDoor.JPG',
-      title: 'Entry way top view',
-      description: 'Another angle of the top view',
+      title: 'Entryway – Angled Top View',
+      description: 'An angled top-down perspective of the apartment’s entryway, offering a more dynamic view of the layout and architectural flow.',
       link: 'https://dev-otedgamer.github.io/BlenderApartmentIndex.html'
     }
   ],
   [
     {
       image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Detailed Door Handle',
-      description: 'This is a personal project I developed Inspired by the 3D Map I was making at work',
+      title: 'Thumb Handle Door – Detail View',
+      description: 'This personal project was inspired by a 3D map I was developing at work. It showcases a detailed thumb handle door, modeled to demonstrate precision and realism in Blender.',
       link: 'https://dev-otedgamer.github.io/DoorsBlenderIndex.html'
     },
     {
       image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Pull Push Door',
-      description: 'This is one of the doors that can be constructed using my Door package',
+      title: 'Push/Pull Door Configuration',
+      description: 'One of several modular door types that can be constructed using my custom Blender Door Package. This setup highlights functional design and adaptability.',
       link: 'https://dev-otedgamer.github.io/DoorsBlenderIndex.html'
     },
     {
       image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Crashbar Window Door',
-      description: 'By using a Combination of Geometry Nodes and 3D models the Door Package can Construct countless variations of doors',
+      title: 'Crash Bar Door with Window',
+      description: 'Built using a combination of Geometry Nodes and traditional 3D modeling, this door demonstrates the flexibility of the Door Package to generate countless variations.',
       link: 'https://dev-otedgamer.github.io/DoorsBlenderIndex.html'
     },
     {
       image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Pushbar Door',
-      description: 'connecting and disconnecting nodes will change parts outs like handels, windows, kick plates, ect...',
+      title: 'Push Bar Door – Modular Components',
+      description: 'By connecting or disconnecting node groups, users can dynamically swap out components like handles, windows, kick plates, and more—enabling rapid prototyping of door styles.',
       link: 'https://dev-otedgamer.github.io/DoorsBlenderIndex.html'
     }
   ],
   [
     {
       image: 'Images/ApartmentTour.PNG',
-      title: 'Apartment Tour',
-      description: 'This is a consept I designed for an Interactive Map that landed me another project at work using HTML, CSS and JavaScript for real world experience',
+      title: 'Interactive Apartment Tour – Overview',
+      description: 'This concept was developed as a real-world project using HTML, CSS, and JavaScript. It served as an interactive map prototype and directly contributed to securing another professional opportunity.',
       link: 'https://dev-otedgamer.github.io/Apartment_Test_Main.html'
     },
     {
       image: 'Images/BathroomTour.jpg',
-      title: 'Bathroom Door',
-      description: 'The idea behide it was visual training for access control',
+      title: 'Bathroom Access Simulation',
+      description: 'This module was designed as part of a visual training tool for access control, simulating restricted entry points within a residential layout.',
       link: 'https://dev-otedgamer.github.io/Apartment_Test_Main.html'
     },
     {
       image: 'Images/FobReaderTour.jpg',
-      title: 'Key fobs and Card Readers',
-      description: 'Display the access control points and the methods to access those areas',
+      title: 'Key Fobs and Card Readers',
+      description: 'This section highlights access control mechanisms, including fob readers and card scanners, to demonstrate secure entry systems within the interactive environment.',
       link: 'https://dev-otedgamer.github.io/Apartment_Test_Main.html'
     },
     {
       image: 'Images/KitchenTour.JPG',
-      title: 'Basic Tour',
-      description: 'Designed to show any other relevent areas',
+      title: 'Kitchen and Common Areas',
+      description: 'Designed to showcase additional relevant spaces, this portion of the tour rounds out the full apartment walkthrough with a focus on layout and accessibility.',
       link: 'https://dev-otedgamer.github.io/Apartment_Test_Main.html'
     }
   ],
   [
     {
       image: 'Image/SurvivalFreshTree.png',
-      title: 'Survival Test Game',
-      description: 'This is a project using Unity I was detrmined to learn how to make my favorite games Crafting Survival style.',
-      link: 'https://example.com/project2'
+      title: 'Survival Test Game – Forest Environment',
+      description: 'This Unity project was my deep dive into crafting-style survival mechanics. Inspired by my favorite genre, I set out to build a playable prototype from scratch using C# and free-to-use assets.',
+      link: 'https://dev-otedgamer.github.io/SurvivalTestIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildSurvivalTest/index.html',
+      controls: 'WASD/Arrow keys to move, Mouse to look, Left Click to chop, Space to jump, G to drop logs, 1–6 to switch tools, Esc to release cursor.'
     },
     {
       image: 'Image/SurvivalLogTransport.png',
-      title: 'Survival Test Game',
-      description: 'Using free to use assets and C# I was able to create a demo where the player can equip an axe and cut down trees for logs.',
-      link: 'https://example.com/project2'
+      title: 'Log Harvesting and Transport',
+      description: 'Players can equip an axe, chop down trees, and collect logs. This mechanic demonstrates interactive resource gathering and inventory logic within a 3D environment.',
+      link: 'https://dev-otedgamer.github.io/SurvivalTestIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildSurvivalTest/index.html',
+      controls: 'WASD/Arrow keys to move, Mouse to look, Left Click to chop, Space to jump, G to drop logs, 1–6 to switch tools, Esc to release cursor.'
     },
     {
       image: 'Image/SurvivalDroppingLogs.png',
-      title: 'Survival Test Game',
-      description: 'I created a camera to represent the player, and made it so the player can pickup and transport logs.',
-      link: 'https://example.com/project2'
+      title: 'Inventory and Object Interaction',
+      description: 'This scene showcases the player’s ability to pick up and transport logs. I implemented a first-person camera system and interaction logic to simulate realistic object handling.',
+      link: 'https://dev-otedgamer.github.io/SurvivalTestIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildSurvivalTest/index.html',
+      controls: 'WASD/Arrow keys to move, Mouse to look, Left Click to chop, Space to jump, G to drop logs, 1–6 to switch tools, Esc to release cursor.'
     },
     {
       image: 'Image/SurvivalChopLog.png',
-      title: 'Survival Test Game',
-      description: 'The option to cut the logs into planks is also avalible.',
-      link: 'https://example.com/project2'
+      title: 'Log Processing – Plank Cutting',
+      description: 'In addition to harvesting, players can process logs into planks. This mechanic adds depth to the crafting system and demonstrates modular gameplay progression.',
+      link: 'https://dev-otedgamer.github.io/SurvivalTestIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildSurvivalTest/index.html',
+      controls: 'WASD/Arrow keys to move, Mouse to look, Left Click to chop, Space to jump, G to drop logs, 1–6 to switch tools, Esc to release cursor.'
     }
   ],
   [
     {
-      image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Project 5 - Slide 1',
-      description: 'Description for Project 5',
-      link: 'https://example.com/project2'
+      image: 'Image/2DHeroesLvl1.png',
+      title: '2D Heroes – Level 1',
+      description: 'This 2D platformer was developed while following a tutorial, serving as a foundation for learning Unity’s 2D systems. It features classic movement, combat, and level design mechanics.',
+      link: 'https://dev-otedgamer.github.io/2DHeroesIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuild2DHeros/index.html',
+      controls: 'WASD/Arrow keys to move and climb, Left Click or Left Ctrl to attack, Space or Right Click to jump.'
     },
     {
-      image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Project 5 - Slide 2',
-      description: 'More detail on Project 5',
-      link: 'https://example.com/project2'
+      image: 'Image/2DHeroesLvl2.png',
+      title: '2D Heroes – Custom Tile Set',
+      description: 'To personalize the project, I used a different tile set than the one provided in the tutorial. This allowed me to explore visual customization and level theming.',
+      link: 'https://dev-otedgamer.github.io/2DHeroesIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuild2DHeros/index.html',
+      controls: 'WASD/Arrow keys to move and climb, Left Click or Left Ctrl to attack, Space or Right Click to jump.'
     },
     {
-      image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Project 5 - Slide 3',
-      description: 'Description for Project 5',
-      link: 'https://example.com/project2'
+      image: 'Image/2DHeroesFalsePlatforms.png',
+      title: '2D Heroes – Visual Trickery',
+      description: 'I used environmental design and perspective to create false platforms, adding a layer of challenge and encouraging players to think critically about their path forward.',
+      link: 'https://dev-otedgamer.github.io/2DHeroesIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuild2DHeros/index.html',
+      controls: 'WASD/Arrow keys to move and climb, Left Click or Left Ctrl to attack, Space or Right Click to jump.'
     },
     {
-      image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Project 5 - Slide 4',
-      description: 'More detail on Project 5',
-      link: 'https://example.com/project2'
+      image: 'Image/2DHeroesDropDown.png',
+      title: '2D Heroes – Gameplay Features',
+      description: 'The game includes enemies, bomb hazards, collectible diamonds, and heart pickups to restore lives—demonstrating a full gameplay loop with risk, reward, and progression.',
+      link: 'https://dev-otedgamer.github.io/2DHeroesIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuild2DHeros/index.html',
+      controls: 'WASD/Arrow keys to move and climb, Left Click or Left Ctrl to attack, Space or Right Click to jump.'
+    }
+  ],
+  [
+     {
+      image: 'Image/FlowerThrive.png',
+      title: 'LifeWorks Happy Flower Project – Unity Animation',
+      description: 'This project was created using Unity’s animation system for a LifeWorks NW event centered around a flower theme. I was honored to contribute a piece of interactive art in support of the Employment Specialist Department and their incredible work.',
+      link: 'https://dev-otedgamer.github.io/Flower',
+      playLink: 'https://dev-otedgamer.github.io/Flower',
+      controls: 'This is a short, looping animation.'
+    },
+    {
+      image: 'Image/FlowerArms1.png',
+      title: 'LifeWorks Happy Flower Project – Personal Reflection',
+      description: 'Sometimes a little sadness can grow into something overwhelming—and in those moments, I’ve learned it’s okay to ask for help. LifeWorks NW has been there for me during those times, and I’m grateful for their support.',
+      link: 'https://dev-otedgamer.github.io/Flower',
+      playLink: 'https://dev-otedgamer.github.io/Flower',
+      controls: 'This is a short, looping animation.'
+    },
+    {
+      image: 'Image/FlowerArms2.png',
+      title: 'LifeWorks Happy Flower Project – Rediscovering Passion',
+      description: 'With guidance from the Employment Specialists at LifeWorks NW, I secured a position at Microchip Technology in Gresham, OR. That experience helped reignite my passion for technology—especially game development and software design.',
+      link: 'https://dev-otedgamer.github.io/Flower',
+      playLink: 'https://dev-otedgamer.github.io/Flower',
+      controls: 'This is a short, looping animation.'
+    },
+    {
+      image: 'Image/FlowerDance.png',
+      title: 'LifeWorks Happy Flower Project – A Journey of Growth',
+      description: 'Over the past three years, I’ve been on an incredible journey of learning and self-discovery. LifeWorks NW has been there every step of the way, offering support when I needed it most. To everyone at LifeWorks NW—thank you, and please keep doing the amazing work you do!',
+      link: 'https://dev-otedgamer.github.io/Flower',
+      playLink: 'https://dev-otedgamer.github.io/Flower',
+      controls: 'This is a short, looping animation.'
     }
   ],
   [
     {
-      image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Project 6 - Slide 1',
-      description: 'Description for Project 6',
-      link: 'https://example.com/project2'
+      image: 'Image/CoinsGoneWildStart.png',
+      title: 'Coins-Gone-Wild – Final Boot Camp Project',
+      description: 'Developed in Unity using C#, this was my final assignment for the Game Developer Boot Camp at The Tech Academy in Portland, OR. The challenge was to create a game with a win condition under a strict time limit. I’ll admit—I was unprepared and spent too much time exploring ideas that weren’t feasible within the deadline.',
+      link: 'https://dev-otedgamer.github.io/CoinsGoneWildIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildCoinsGoneWild/index.html',
+      controls: 'WASD/Arrow keys to move, Space to jump.'
     },
     {
-      image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Project 6 - Slide 2',
-      description: 'More detail on Project 6',
-      link: 'https://example.com/project2'
+      image: 'Image/CoinsGoneWildCoinSnip.png',
+      title: 'Coins-Gone-Wild – Simplified Concept',
+      description: 'With time running out, I pivoted to a coin collector game. I kept the mechanics simple and focused on completing a playable prototype. Although I had many creative ideas for expanding the concept, I had to cut them due to time constraints and unpredictable implementation challenges.',
+      link: 'https://dev-otedgamer.github.io/CoinsGoneWildIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildCoinsGoneWild/index.html',
+      controls: 'WASD/Arrow keys to move, Space to jump.'
     },
     {
-      image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Project 6 - Slide 3',
-      description: 'Description for Project 6',
-      link: 'https://example.com/project2'
+      image: 'Image/CoinsGoneWildJumping.png',
+      title: 'Coins-Gone-Wild – Lessons in Scope and Planning',
+      description: 'This project taught me valuable lessons about the importance of planning in game development. Even a simple game requires thoughtful design—features, level layout, gameplay flow, and more. Sometimes, cutting features is necessary to ensure the project is completed and playable.',
+      link: 'https://dev-otedgamer.github.io/CoinsGoneWildIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildCoinsGoneWild/index.html',
+      controls: 'WASD/Arrow keys to move, Space to jump.'
     },
     {
-      image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Project 6 - Slide 4',
-      description: 'More detail on Project 6',
-      link: 'https://example.com/project2'
+      image: 'Image/CoinsGoneWildPlayerSnip.png',
+      title: 'Coins-Gone-Wild – Final Reflection',
+      description: '"Under promise, over deliver—but above all, deliver what you promise." This project reminded me that finishing strong, even with a scaled-back scope, is more valuable than chasing perfection and missing the mark.',
+      link: 'https://dev-otedgamer.github.io/CoinsGoneWildIndex.html',
+      playLink: 'https://dev-otedgamer.github.io/WebGLBuildCoinsGoneWild/index.html',
+      controls: 'WASD/Arrow keys to move, Space to jump.'
     }
   ],
   [
     {
-      image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Project 7 - Slide 1',
-      description: 'Description for Project 7',
-      link: 'https://example.com/project2'
+      image: 'Image/DigDugStartAnimation.gif',
+      title: 'DiG DUG Remake – Internship Project',
+      description: 'During my time at The Tech Academy, I completed a two-week internship with Prosper I.T. Consulting. My assignment was to recreate the classic arcade game DiG DUG using Unity and C#. I collaborated with a team of developers, each working on different retro game remakes. We followed Agile Scrum methodologies, including sprint planning, daily standups, and weekly retrospectives.',
+      link: 'https://dev-otedgamer.github.io/DigDug',
+      playLink: 'https://dev-otedgamer.github.io/DigDugWebGLBuild/digDugIndex',
+      controls: 'WASD/Arrow keys to move, Arrow + Space to dig, Z to attack.'
     },
     {
-      image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Project 7 - Slide 2',
-      description: 'More detail on Project 7',
-      link: 'https://example.com/project2'
+      image: 'Image/DigDugGamePlay1new.gif',
+      title: 'DiG DUG Remake – Custom Art Assets',
+      description: 'I applied lessons from previous projects and created custom assets using MS Paint, including the dirt tiles and other missing sprites. These were converted into usable Unity sprites, allowing for a cohesive and retro-inspired visual style.',
+      link: 'https://dev-otedgamer.github.io/DigDug',
+      playLink: 'https://dev-otedgamer.github.io/DigDugWebGLBuild/digDugIndex',
+      controls: 'WASD/Arrow keys to move, Arrow + Space to dig, Z to attack.'
     },
     {
-      image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Project 7 - Slide 3',
-      description: 'Description for Project 7',
-      link: 'https://example.com/project2'
+      image: 'Image/DigDugCodeSnip.PNG',
+      title: 'DiG DUG Remake – Procedural Map Generation',
+      description: 'Using C#, I developed a map generator that dynamically spawns tiles, rocks, and enemies. I integrated a monster asset pack that included skull sprites, which I used to visually indicate when enemies enter a phase where they can travel through terrain.',
+      link: 'https://dev-otedgamer.github.io/DigDug',
+      playLink: 'https://dev-otedgamer.github.io/DigDugWebGLBuild/digDugIndex',
+      controls: 'WASD/Arrow keys to move, Arrow + Space to dig, Z to attack.'
     },
     {
-      image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Project 7 - Slide 4',
-      description: 'More detail on Project 7',
-      link: 'https://example.com/project2'
+      image: 'Image/DigDugGameOver.gif',
+      title: 'DiG DUG Remake – UI and Animation Polish',
+      description: 'I created short animations for the start screen, continue screen, and game over screen to enhance the player experience. The project was completed on time and delivered as a fully playable WebGL build.',
+      link: 'https://dev-otedgamer.github.io/DigDug',
+      playLink: 'https://dev-otedgamer.github.io/DigDugWebGLBuild/digDugIndex',
+      controls: 'WASD/Arrow keys to move, Arrow + Space to dig, Z to attack.'
     }
   ],
   [
-    {
-      image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Project 8 - Slide 1',
-      description: 'Description for Project 8',
-      link: 'https://example.com/project2'
+   {
+      image: 'Image/ConePlayerBP.PNG',
+      title: 'Cone Survivor – Unreal Engine Blueprint Project',
+      description: 'As part of a second internship with Prosper I.T. Consulting, I created Cone Survivor using Unreal Engine 5 and Blueprints. I was given full creative control, with the only requirement being to build a game entirely in Blueprints—no C++.',
+      link: 'https://dev-otedgamer.github.io/ConeIndex.html'
     },
     {
-      image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Project 8 - Slide 2',
-      description: 'More detail on Project 8',
-      link: 'https://example.com/project2'
+      image: 'Image/ConeRifle.JPG',
+      title: 'Cone Survivor – Round-Based FPS Concept',
+      description: 'I designed a round-based survival first-person shooter with a unique cone-themed aesthetic. All assets were created in-engine using Unreal’s modeling tools. I even embraced a bug that caused enemies to phase through walls—turning them into ghost-like adversaries.',
+      link: 'https://dev-otedgamer.github.io/ConeIndex.html'
     },
     {
-      image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Project 8 - Slide 3',
-      description: 'Description for Project 8',
-      link: 'https://example.com/project2'
+      image: 'Image/ConeVendorList.PNG',
+      title: 'Cone Survivor – Progression and Upgrades',
+      description: 'To support player progression, I implemented a vendor system offering upgrades like new weapons, increased fire rate, temporary speed boosts, and body armor. Coins dropped by ghost enemies are used to unlock these vendors, which are hidden behind destructible cone-shaped barriers.',
+      link: 'https://dev-otedgamer.github.io/ConeIndex.html'
     },
     {
-      image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Project 8 - Slide 4',
-      description: 'More detail on Project 8',
-      link: 'https://example.com/project2'
+      image: 'Image/ConeGameOver.PNG',
+      title: 'Cone Survivor – Project Completion and Future Plans',
+      description: 'While not as polished as my DiG DUG remake, I successfully completed all 10 user stories and delivered a functional prototype. I plan to continue developing Cone Survivor to expand its mechanics and bring the full vision to life.',
+      link: 'https://dev-otedgamer.github.io/ConeIndex.html'
     }
   ],
-  [
-    {
-      image: 'Images/Doors_Blender_ThumbHandleWindowDetailDoor.JPG',
-      title: 'Project 9 - Slide 1',
-      description: 'Description for Project 9',
-      link: 'https://example.com/project2'
-    },
-    {
-      image: 'Images/Doors_Blender_PushPullDoor.JPG',
-      title: 'Project 9 - Slide 2',
-      description: 'More detail on Project 9',
-      link: 'https://example.com/project2'
-    },
-    {
-      image: 'Images/Doors_Blender_CrashbarWindowDoor.JPG',
-      title: 'Project 9 - Slide 3',
-      description: 'Description for Project 9',
-      link: 'https://example.com/project2'
-    },
-    {
-      image: 'Images/Doors_Blender_PushBarDoor.JPG',
-      title: 'Project 9 - Slide 4',
-      description: 'More detail on Project 9',
-      link: 'https://example.com/project2'
-    }
-  ],
-  // Add up to 9 project arrays
+  // Add project arrays
 ];
 
 let currentProject = 0;
@@ -382,6 +422,20 @@ function showSlide(projectIndex, slideIndex) {
   modalTitle.textContent = slide.title;
   modalDescription.textContent = slide.description;
   modalLink.href = slide.link;
+
+  // New additions
+  const playLink = document.getElementById('playLink');
+  const controlsText = document.getElementById('controlsText');
+
+  if (slide.playLink) {
+    playLink.href = slide.playLink;
+    playLink.style.display = 'inline-block';
+  } else {
+    playLink.style.display = 'none';
+  }
+
+  controlsText.textContent = slide.controls || '';
+
 }
 
 function spinImageToSlide(nextIndex) {
