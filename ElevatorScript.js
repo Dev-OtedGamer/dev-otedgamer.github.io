@@ -634,10 +634,23 @@ function setupElevatorControls() {
     const btn = document.createElement('button');
     btn.textContent = floor;
     btn.setAttribute('data-floor', floor);
+
+    // Set default style (milky yellowish white)
+    btn.classList.remove('lit'); // Ensure it's not lit by default
+
+    // Add click listener directly to each button
+    btn.addEventListener('click', () => {
+      // Remove lit class from all buttons
+      document.querySelectorAll('.floor-buttons button').forEach(b => b.classList.remove('lit'));
+
+      // Add lit class to the clicked button
+      btn.classList.add('lit');
+    });
+
     container.appendChild(btn);
   });
 
-  // Event Listener for Floor Buttons
+  // Add event delegation for triggering elevator sequence
   container.addEventListener('click', e => {
     if (e.target.tagName !== 'BUTTON') return;
     const floor = e.target.getAttribute('data-floor');
@@ -721,6 +734,8 @@ document.querySelectorAll('.back-button').forEach(button => {
     closeDoors();
     gunWrapper.style.display = 'none';
     document.body.classList.remove('crosshair-active');
+    // Reset lit state on floor buttons
+    document.querySelectorAll('.floor-buttons button').forEach(btn => btn.classList.remove('lit'));
 
     // Hide floor content
     contents.forEach(content => content.classList.add('hidden'));
