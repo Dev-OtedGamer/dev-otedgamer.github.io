@@ -36,7 +36,10 @@ body, html {
   position: absolute;
   width: 25vw;
   height: 100vh;
-  background: #555;
+  background-image: url('Image/ElevatorDoor.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   top: 0;
   transition: transform 1s ease;
   z-index: 2;
@@ -68,7 +71,10 @@ body, html {
   width: 25vw;
   height: 100vh;
   top: 0;
-  background: #222;
+  background-image: url('Image/MahoganyWalls.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -95,28 +101,32 @@ body, html {
 .left-poster, .right-poster {
   position: absolute;
   top: 10%;
-  bottom: 50%; /* Vertically centered between 10% and 50% */
-  left: 0;
-  right: 0;
-  margin: auto;
+  bottom: 50%;
+  width: 300px; /* Fixed width for poster */
+  margin: 0 2rem; /* Space from wall edges */
+  padding: 1rem;
+  background: #fff; /* Poster background */
+  border: 10px solid #5c3a21; /* Mahogany-like frame */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Depth */
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 1rem;
-  padding: 1rem;
-  background: #444;
-  border: 2px solid #666;
-  color: #f0f0f0;
+  color: #222;
+  z-index: 2;
 }
 
-.right-poster img {
+.right-poster img,
+.left-poster img {
   max-width: 100%;
   max-height: 150px;
-  border-radius: 10px;
+  border-radius: 4px;
   margin-bottom: 0.5rem;
 }
+
 
 /* =======================================
    FLOOR SELECTION BUTTONS
@@ -231,7 +241,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100vh; /* full screen height */
- background-image: url('Image/Shooting_Gallery.jpg');
+  background-image: url('Image/Shooting_Gallery.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -596,28 +606,31 @@ body, html {
 
 .contact-overlay2 {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 30%;
   transform: translateX(-50%);
   z-index: 2;                /* Above background */
   text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); /* Optional styling */
   padding: 1rem 2rem;
   border-radius: 8px;
+  min-width: 320px;             /* Optional: ensures a wider button */
+  min-height: 300px;             /* Optional: ensures a taller button */
+
 }
 
 .contact-overlay3 {
   position: absolute;
-  bottom: 10%;
-  left: 72%;
+  bottom: 5%;
+  left: 73%;
   transform: translateX(-50%);
   z-index: 2;                /* Above background */
   text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); /* Optional styling */
   padding: 1rem 2rem;
   border-radius: 8px;
+  min-width: 320px;             /* Optional: ensures a wider button */
+  min-height: 300px;             /* Optional: ensures a taller button */
 }
 
 
