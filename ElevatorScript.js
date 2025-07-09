@@ -286,7 +286,7 @@ const slideshows = [
      {
       image: 'Image/FlowerThrive.png',
       title: 'LifeWorks Happy Flower Project – Unity Animation',
-      description: 'This project was created using Unity’s animation system for a LifeWorks NW event centered around a flower theme. I was honored to contribute a piece of interactive art in support of the Employment Specialist Department and their incredible work.',
+      description: 'This project was created using Unity’s animation system for a LifeWorks NW corporate staffing event for employee appreciation. I was honored to contribute a piece of interactive art in support of the Employment Specialist Department and their incredible work.',
       link: 'https://dev-otedgamer.github.io/Flower',
       playLink: 'https://dev-otedgamer.github.io/Flower',
       controls: 'This is a short, looping animation.'
@@ -302,7 +302,7 @@ const slideshows = [
     {
       image: 'Image/FlowerArms2.png',
       title: 'LifeWorks Happy Flower Project – Rediscovering Passion',
-      description: 'With guidance from the Employment Specialists at LifeWorks NW, I secured a position at Microchip Technology in Gresham, OR. That experience helped reignite my passion for technology—especially game development and software design.',
+      description: 'With guidance from the Employment Specialists at LifeWorks NW, I secured a security position at Microchip Technology in Gresham, OR. That experience helped reignite my passion for technology—especially game development and software design.',
       link: 'https://dev-otedgamer.github.io/Flower',
       playLink: 'https://dev-otedgamer.github.io/Flower',
       controls: 'This is a short, looping animation.'
@@ -583,6 +583,14 @@ requestAnimationFrame(updateGunPosition);
   const isFloor2Active = !floor2.classList.contains('hidden');
   if (!isFloor2Active) return; //  Only fires on Floor 2
 
+    // Play gun sound
+  const gunSound = document.getElementById('gun-sound');
+  if (gunSound) {
+    gunSound.currentTime = 0;
+    gunSound.play();
+  }
+
+
   gunArm.classList.remove('recoil');
   void gunArm.offsetWidth;
   gunArm.classList.add('recoil');
@@ -667,10 +675,18 @@ function triggerElevatorSequence(floor) {
   void elevator.offsetWidth; // Force reflow for animation restart
   elevator.classList.add('shake');
 
-  // After 0.5s shake, pause then open doors
+  // After 0.5s shake, play chime, then pause, then open doors
   setTimeout(() => {
     elevator.classList.remove('shake');
 
+    //  Play elevator chime here
+    const chime = document.getElementById('elevator-chime');
+    if (chime) {
+      chime.currentTime = 0;
+      chime.play();
+    }
+
+    // Wait a moment before opening doors
     setTimeout(() => {
       openDoors();
 
@@ -680,14 +696,16 @@ function triggerElevatorSequence(floor) {
         showContent(floor);
       }, 1000);
 
-    }, 500);
+    }, 900); // Slight pause before doors open
 
   }, 500); // Shake duration
 }
 
+
 function openDoors() {
   leftDoor.classList.add('open-left');
   rightDoor.classList.add('open-right');
+  // Play elevator chime
 }
 
 function closeDoors() {
