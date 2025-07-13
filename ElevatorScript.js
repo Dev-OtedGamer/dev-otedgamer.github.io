@@ -19,6 +19,41 @@ const leftQuotes = [
   "Continually elevating my learning and knowledge"
 ];
 
+// ================================
+// Info Modal
+// ================================
+const infoModal = document.querySelector('.info-modal');
+const infoModalText = document.querySelector('#modal-description');
+const infoCloseBtn = document.querySelector('#close-modal');
+
+function showModalOnce(key, message, useHTML = false) {
+  if (!sessionStorage.getItem(key)) {
+    if (useHTML) {
+      infoModalText.innerHTML = message;
+    } else {
+      infoModalText.textContent = message;
+    }
+    infoModal.classList.remove('hidden');
+    sessionStorage.setItem(key, 'shown');
+  }
+}
+
+
+infoCloseBtn.addEventListener('click', () => {
+  infoModal.classList.add('hidden');
+});
+
+
+// Elevator intro on first page load
+window.addEventListener('load', () => {
+  showModalOnce('elevatorIntro',
+    "Welcome to my interactive portfolio! Use the elevator buttons to explore each floor. Click 'Back to Elevator' to return.<br><br>" +
+    "<strong>Floor 3:</strong> About Me<br>" +
+    "<strong>Floor 2:</strong> Project Gallery<br>" +
+    "<strong>Floor 1:</strong> Contact",
+    true // useHTML flag
+  );
+});
 
 // ================================
 // Project card setup
@@ -117,7 +152,7 @@ const leftQuotes = [
 window.addEventListener('DOMContentLoaded', () => {
   resetPosters();
   setupElevatorControls();
-  setupProjectCards();
+  //setupProjectCards();
 
 });
 
@@ -728,6 +763,13 @@ function showContent(floorNumber) {
   console.log('Trying to unhide:', selectedContent);
   console.log('Floor to show:', floorNumber);
 
+if (floorNumber == 1) {
+  showModalOnce('floor1', "Floor 1: Contact Me! This section shows my contact info, including email, LinkedIn, GitHub, and resume.");
+} else if (floorNumber == 2) {
+  showModalOnce('floor2', "Floor 2: Shooting Gallery! Aim and click on a project card to open its details. Each project card has four slides and links to detailed project page and or Playable demo.");
+} else if (floorNumber == 3) {
+  showModalOnce('floor3', "Floor 3: About me.");
+}
 
 
   if (selectedContent) {
