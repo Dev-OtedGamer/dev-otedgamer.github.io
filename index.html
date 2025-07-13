@@ -1,216 +1,226 @@
 <!DOCTYPE html>
-<html>
-    <!--HEAD-->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
-        <title>Joshua Rollins</title>
-        <link rel="stylesheet" type="text/css" href="Css/portfolio.css">
-    </head>
-    
-    <!--BODY-->
-    <body Class="Background">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevator Portfolio</title>
 
-        <!--NAVBAR-->
-        <div class="Navbar">
-            <a class="active" href="#Home">Home</a>
-            <!--New section added-->
-            <a href="#Slideshow">Slideshow</a>
-            <a href="#About">About</a>
-            <a href="#GitHub">GitHub</a>
-            <!--Onclick and ondblclick functions added to open and close the contact form-->
-            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="ElevatorStyles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="info-modal" class="info-modal hidden">
+    <div class="info-modal-content">
+      <p id="modal-description"></p>
+      <button id="close-modal">Got it!</button>
+    </div>
+  </div>
+
+  <!-- Elevator Wrapper -->
+  <div class="elevator-wrapper">
+
+    <!-- Elevator Interior -->
+    <div class="elevator">
+
+      <!-- Elevator Doors -->
+      <div class="door left-door"></div>
+      <div class="door right-door"></div>
+
+      <!-- Elevator Walls -->
+      <div class="left-wall">
+        <div class="left-poster" id="leftPoster"></div>
+        <div class="floor-buttons left-buttons">
+          <!-- Floor buttons dynamically injected via JavaScript -->
         </div>
-
-    <!--BACKGROUND VIDEO-->
-        <div id="Home">
-            <video autoplay muted loop id="WebDive_Video">
-                <source src="Image\webDive.mp4" type="video/mp4">
-                <!--ALT MESSAGE FOR VIDEO-->
-                Your browser does not support HTML5 video.
-            </video>
-        </div>
-
-      <!--VIDEO TEXT-->
-        <div class="Video_Text"> 
-            <h1 class="white-text">Joshua Rollins's Portfolio</h1>
-            <strong>
-                <p class="center">
-                    <q>You might not think that programmers are artists, but programming 
-                        <br>is an extremely creative profession. It's logic-based creativity.
-                    </q>
-                    <br>-John Romero
-                    <br><q>There is always one more bug to fix.</q>&nbsp;&nbsp;<q>Talk is cheap. Show me the code.</q>
-                    <br>-Ellen Ullman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Linus Torvalds
-                    <br>
-                    <br> My name is Josh. Welcome to my portfolio website. With it I will give you a peek into my background
-                    and experience.
-                    <br>
-                    <br>Feel Free to poke around and get to know me, and
-                    <BR>Thank you for stopping by and enjoy! 
-                </p>
-            </strong>
-        </div>
-
-      <!--Slideshow section added-->
-        <div id="Slideshow">
-            <div id="Slideshow_Background">
-                <div id="Slideshow_Container">
-                    <!--Slide 1 of 6-->
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/MEBlackWhite.jpg" alt="Picture of Me">
-                        <div class="text">I'm available to assist you on your project!</div>
-                    </div>
-                    <!--Slide 2 of 6-->
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
-                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
-                    </div>
-                    <!--Slide 3 of 6-->
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/Python.png" alt="Python logo">
-                        <div class="text">the popular programming language Python,</div>
-                    </div>
-                    <!--Slide 4 of 6-->
-                    <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/C_Sharp_and_Dot_NET.png" alt="C# logo">
-                        <div class="text">C#, .Net Framework, ASP.NET, MVC,</div>
-                    </div>
-                     <!--Slide 5 of 6-->
-                     <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/SQL_and_Database.jpg" alt="SQL logo">
-                        <div class="text">back end development, databases and SQL.</div>
-                    </div>
-                     <!--Slide 6 of 6-->
-                     <div class="mySlides fade">
-                        <img class="Slideshow_Images" src="Image/Code.jpg" alt="Code Blocks">
-                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
-                    </div>
-                    <!--Previous and next buttons-->
-                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br><!--Adds a space between the slideshow images and the dots-->
-
-        <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
-
-        <div style="text-align: center;">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <span class="dot" onclick="currentSlide(6)"></span>
-                </div>
-            </div>
-        </div>
-
-        <!--ABOUT SECTION-->
-        <div class="ROW" id="About">
-            <!--LEFT COLUMN-->
-            <div class="Column_2">
-                <img src="Image\Computers.webp" alt="Computer Image">
-                <h1>GitHub</h1>
-                <p>
-                    You can view my coding projects on my GitHub profile here:
-                    <br>
-                <p class="center"><a href="https://github.com/Dev-OtedGamer" target="_blank">MY GitHub Profile</a></p>
-                    <br>
-                    Games available on my GitHub:<br>
-                    <a href="https://github.com/Dev-OtedGamer/The-Tech-Academy-Unity-Projects" target="_blank">Coins Gone Wild</a> - Created using Unity Game Engine and C#<br>
-                    <a href="https://github.com/Dev-OtedGamer/UnrealGameSubmission" target="_blank">Coin Collector</a> - Created using Unreal Game Engine and C++
-                </p>
-                <br>
-                <h1><a href="https://www.linkedin.com/in/rollinsjoshworks/" target="_blank">MY LinkedIn Profile</a></h1>
-                <br>
-                <h1><a href="https://docs.google.com/document/d/1E_Lm-Lp9xpFN04wBdxeeHbSnPST2VUwUo1zMWbRjKC8/edit?usp=sharing" target="_blank">MY Resume</a></h1>
-
       </div>
-            <!--RIGHT COLUMN-->
-            <div class="Column_1">
-                <h1>About Me</h1>
-                <p>
-                    I'm a passionate and driven game developer and aspiring full-stack software developer whose creativity knows no bounds in the digital realm. I’m also a proud father of two amazing sons and a grandfather to three energetic boys—they are my inspiration and motivation every day.
-                    <br><br>
-                    I recently completed <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s intensive Game Developer Boot Camp, where I trained in a wide range of modern programming and web development languages including HTML, CSS, JavaScript, SQL, C#, Python, and C++. Through hands-on experience and real-world projects, I gained a solid foundation in both front-end and back-end technologies.
-                    <br><br>
-                    My journey through game development has been exciting and deeply fulfilling. In Unity, I learned how to bring ideas to life by working with scenes, characters, game objects, scripts, animations, lighting, and particle effects. I created multiple games using Unity—most notably, <strong>Coins Gone Wild</strong>, a fun and energetic platformer where players hop around collecting coins, and a <strong>mini solar system simulation</strong> that demonstrates object motion and rotation. Both are available on my <a href="https://github.com/Dev-OtedGamer?tab=repositories" target="_blank">GitHub</a>.
-                    <br><br>
-                    I also completed a C++ and Unreal Engine course, where I built a game called <strong>Coin Collector</strong>, which features randomly generated coins and glowing obstacle boxes within a grid. This project taught me a great deal about procedural generation, memory management, and the power of Unreal Engine's C++ backend. And this is just the beginning—my head is full of new game ideas I’m eager to build.
-                    <br><br>
-                    As I approach the completion of my full-stack training, I’m excited about the future. I love building things—from intuitive web applications to immersive game worlds—and I’m eager to bring that passion to a professional team. Whether it's games, tools, or software systems, I'm ready to contribute, collaborate, and continue growing.
-                    <br><br>
-                    Let’s build something amazing together. Feel free to reach out here <a href="mailto:Rollinsjoshworks@gmail.com">Email</a> or through the link below.
-                </p>
-            </div>
+
+      <div class="right-wall">
+        <div class="right-poster">
+          <img src="Image/MEBlackWhite.jpg" alt="Josh Rollins" />
+          <p>Owner / Operator<br>Josh Rollins</p>
+        </div>
+        <div class="floor-buttons right-buttons">
+          <!-- Floor buttons dynamically injected via JavaScript -->
+        </div>
+      </div>
+
+    </div> <!-- End Elevator -->
+
+    <!-- Floor 3: About Me -->
+    <div id="floor-3" class="floor-content hidden">
+      <div class="floor3-wrapper">
+        <!-- Left Poster for Floor 3 -->
+        <div class="floor3-poster-left">
+          25+ years in building, maintaining, repairing,<br />
+          troubleshooting, debugging complex systems.<br />
+          <br />
+          3+ years in learning and training in multiple languages and disciplines
+          including HTML, CSS, JavaScript, Python, C#, C++, SQL.<br />
+          <br />
+          Never afraid to tackle new and unknown projects knowing I have the knowledge and ability to self teach when needed.
         </div>
 
-        <!--GITHUB SECTION-->
-        <div class="Row" id="GitHub">
-            <!--LEFT COLUMN-->
-            <div class="Column_1">
-                
-                <!--Project Section -->
-                <h1>Projects:</h1>
-                <p>
-                    <strong>Client: Prosper I.T Consulting/2 week</strong> <a href= "https://dev-otedgamer.github.io/DigDug" target="_blank">project</a><br>
-                     - DiG DUG Recreation Unity/C#<br>  
-                    <br>
-                    <strong>Client: Prosper I.T Consulting/2 week</strong> <a href= "https://dev-otedgamer.github.io/ConeIndex" target="_blank">project</a><br>
-                     - Cone Survivor Game Design & Development Unreal Engine 5/Blueprints<br>
-                    <br>
-                    <strong>Client: Lifeworks NW/2 day</strong> <a href= "https://dev-otedgamer.github.io/Flower" target="_blank">project</a><br>
-                     - Short animation created using Unity animation tools<br>
-                    <br>
-                    <strong>Client: Microchip Technology & Securitas - 3-month</strong> <a href= "https://dev-otedgamer.github.io/Apartment_Test_Main.html" target="_blank">project</a><br>
-                    The 3D model shown was created in Blender within just four days as a proof of capability and does not reflect the final product. 
-                    This early demo helped secure project approval and demonstrated my ability to handle full 3D asset production for access control systems.<br>
-                    <br>
-                    <strong>Client: Microchip Technology & Securitas - 2-week</strong> <a href= "https://dev-otedgamer.github.io/Apartment_Test_Main.html" target="_blank">project</a><br>
-                    Using the 3D model from the previous project, I built a web-based interactive demo using HTML and photos of the 3D assets to explore access control
-                     interface possibilities. This was a proof of concept and not a final product, but it helped communicate design direction and technical viability.
-
-                    </p>
-            </div>
-            <!--RIGHT COLUMN-->
-            <div class="Column_2">
-                <a href="https://github.com/Dev-OtedGamer" taget="_blank"><img src="Image\codingpic.webp" alt="CodingPicture"></a>
-            </div>
+        <!-- Main Floor 3 Content -->
+        <div class="floor3-main">
+          <h1>Welcome to my newly remodeled portfolio!</h1>
+          <p>
+           We decided to install an elevator-because there's a lot of ground to cover in these brief few minutes while you get to know me. And don't worry-this is now a fully one-page experience, powered by JavaScript to dynamically show each section. See? I <em>did</em> learn a few things on my journey of knowledge.
+          </p>
+          <p>
+            In 2022, I decided to pursue my lifelong dream of making video games. I began by learning Python through free courses, then started exploring Unity and C#. By 2024, I committed fully by enrolling in The Tech Academy's Game Developer Boot Camp. My goal was to master Unity and Unreal and start creating indie games.
+          </p>
+          <p>
+            But I gained so much more.
+          </p>
+          <p>
+            I learned frontend and backend development-web design, UI/UX, databases and storage, computer science fundamentals, .NET development with C#, and even app development. I've always been a creative person, but I struggled to find the right outlet. Through tech, I've discovered multiple ways to express myself-whether through web design, game design, app creation, and beyond.
+          </p>
+          <p>
+            Now that I've completed my training, I'm ready to start creating. And while working with a team is more fun, I'll go solo if I have to-until I find the right place to contribute, grow, and thrive.
+          </p>
+          <button class="back-button">Back to Elevator</button>
         </div>
-        
-        <!--CONTACT SECTION-->
-        <div id="Contact">
-          <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
-          <div class="form-popup" id="myForm">
-            <form action="https://formspree.io/f/mgegbvlp"
-            method="POST" class="form-container"
-            ><!-- Here we are using a free online service from
-https://formspree.io/ to send our contact form to an email address of our choosing - 
-note: it will not run unless live on the internet, you have to push it to your online 
-website first -->
-          
-                <h1>Contact</h1>
-                <label for="name"><b>Name:</b></label>
-                    <input type="text" placeholder="Please enter your name here" name="name" required>
-                <label for="phone"><b>Phone:</b></label>
-                    <input type="text" placeholder="Feel free to leave a phone number" name="phone">
-                <label for="email"><b>Email:</b></label>
-                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here" required>
-                <label for="message"><b>Message:</b></label>
-                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                    <button type="submit" class="btn">SUBMIT</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                </form>
-            </div>
-        </div>
+      </div>
+    </div>
 
-        <!--FOOTER SECTION-->
-        <footer>
-            <p>
-                <p class="center"><a href="https://www.linkedin.com/in/joshua-rollins-3298102aa/" target="_blank">My Linkedin</a></p>
-                <br>
-            </p>
-        </footer>
-        <script src="JS/portfolio.js"></script>
-    </body>
+    <!-- Floor 2: Projects -->
+    <div id="floor-2" class="floor-content hidden">
+      <h1>My Projects Gallery</h1>
+
+    <div class="project-gallery">
+      <!-- Moving Rows -->
+      <div class="project-row row-1">
+        <!-- Example Card -->
+        <div class="project-card" data-project="0">
+          <div class="image-container">
+          <img src="Images/Aprt_Blend_Topview_Angle.JPG" alt="Project 0">
+          </div>
+          <h3>Blender 3D Model</h3>
+        </div>
+        <div class="project-card" data-project="1">
+          <div class="image-container">
+          <img src="Images/Doors_Blender_ThumbHandleLrgWindowDoor.JPG" alt="Project 1">
+          </div>
+          <h3>Blender 3D Door Package</h3>
+        </div>
+        <div class="project-card" data-project="2">
+          <div class="image-container">
+          <img src="Images/Apartment_Layout.PNG" alt="Project 2">
+          </div>
+          <h3>Interactive Map Project</h3>
+        </div>
+        <div class="project-card" data-project="3">
+          <div class="image-container">
+          <img src="Image/SurvivalTreeChopped.png" alt="Project 3">
+          </div>
+          <h3>Survival Test</h3>
+        </div>
+        <div class="project-card" data-project="4">
+          <div class="image-container">
+          <img src="Image/2DheroesStart.png" alt="Project 4">
+          </div>
+          <h3>2D Heroes</h3>
+        </div>
+        <!-- Add more cards here --> 
+      </div>
+
+      <div class="project-row row-2">
+        <div class="project-card" data-project="5">
+          <div class="image-container">
+          <img src="Image/Flower_Happy1.png" alt="Project 5">
+          </div>
+          <h3>Happy Flower Project</h3>
+        </div>
+        <div class="project-card" data-project="6">
+          <div class="image-container">
+          <img src="Image/CoinsGoneWildGamePlay.png" alt="Project 6">
+          </div>
+          <h3>Coins-Gone-Wild</h3>
+        </div>
+        <div class="project-card" data-project="7">
+          <div class="image-container">
+          <img src="Image/DigDugStartAnimation.gif" alt="Project 7">
+          </div>
+          <h3>DiG DUG Remake</h3>
+        </div>
+        <div class="project-card" data-project="8">
+          <div class="image-container">
+          <img src="Image/ConeStart.PNG" alt="Project 8">
+          </div>
+          <h3>Cone Survivor</h3>
+        </div>
+        <!-- Add more cards here -->
+      </div>
+    </div>
+
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+
+    <div class="image-wrapper">
+      <button class="nav-button left" id="prevSlide">←</button>
+      <img id="modalImage" src="" alt="Project Image" />
+      <button class="nav-button right" id="nextSlide">→</button>
+    </div>
+
+    <div class="text-area">
+      <h2 id="modalTitle">Project Title</h2>
+      <p id="modalDescription">Project description...</p>
+      <a id="modalLink" href="#" target="_blank">View More</a>
+      <a id="playLink" class="play-button" target="_blank">🎮 Play Game</a>
+      <p id="controlsText" class="controls-description"></p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Back to Elevator -->
+    <button class="back-button">Back to Elevator</button>
+    </div>
+    <div id="gunWrapper">
+      <img id="gunArm" src="Image/handGun2D.png" alt="Gun Arm" />
+    </div>
+
+
+    <!-- Floor 1: Contact -->
+    <div id="floor-1" class="floor-content hidden">
+  <div class="contact-image-wrapper">
+  </div>
+
+  <div class="contact-overlay">
+    <h1>Contact Me</h1>
+    <p>Email: Rollinsjoshworks@gmail.com</p>
+    <p><a href="https://www.linkedin.com/in/rollinsjoshworks" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/Dev-OtedGamer" target="_blank">GitHub</a></p>
+    <p><a href="https://docs.google.com/document/d/1E_Lm-Lp9xpFN04wBdxeeHbSnPST2VUwUo1zMWbRjKC8/edit?usp=sharing" target="_blank">MY Resume</a></p>
+  </div>
+
+  <a href="https://www.linkedin.com/in/rollinsjoshworks" target="_blank" class="contact-link-block">
+  <div class="contact-overlay2">
+    <span></span>
+  </div>
+</a>
+
+
+  <a href="https://github.com/Dev-OtedGamer" target="_blank" class="contact-link-block">
+  <div class="contact-overlay3">
+    <span></span>
+  </div>
+</a>
+
+   <button class="back-button">Back to Elevator</button>
+</div>
+  </div> <!-- End Elevator Wrapper -->
+
+  <!-- JavaScript Logic -->
+  <script src="ElevatorScript.js"></script>
+
+  <audio id="gun-sound" src="Sounds/popGun.mp3" preload="auto"></audio>
+  <audio id="elevator-chime" src="Sounds/elevatorDing.mp3" preload="auto"></audio>
+
+</body>
 </html>
